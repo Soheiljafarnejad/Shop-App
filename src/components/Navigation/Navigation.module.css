@@ -1,0 +1,103 @@
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 55px;
+  box-shadow: 0 4px 2px -2px var(--gray);
+}
+
+.title {
+  order: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 0.75rem;
+}
+
+.nav ul {
+  flex-grow: 1;
+  display: flex;
+  background-color: white;
+  padding-left: 0.75rem;
+}
+
+.nav ul li:not(:last-child) {
+  margin-right: 2rem;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.activeLink {
+  color: var(--primary-color) !important;
+}
+
+.menu {
+  position: relative;
+  display: none;
+  border: none;
+  outline: none;
+  background-color: white;
+  cursor: pointer;
+  padding-left: 0.75rem;
+}
+
+.menu div {
+  background-color: var(--black);
+  width: 27px;
+  height: 3px;
+  margin: 5px 0;
+  transition: all 0.2s linear;
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 576px) {
+  .title {
+    order: 0;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .toggle .nav {
+    position: relative;
+    display: block;
+    z-index: 999;
+    width: 100%;
+  }
+
+  .toggle ul {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    margin-right: 0 !important;
+    border-top: 1px solid var(--gray);
+  }
+
+  .toggle li {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--gray);
+  }
+  .toggle .menu .one {
+    position: absolute;
+    transform: rotate(45deg);
+  }
+  .toggle .menu .two {
+    opacity: 0;
+  }
+  .toggle .menu .there {
+    position: absolute;
+    transform: rotate(-45deg);
+    top: 0px;
+  }
+  .menu {
+    display: block;
+  }
+}

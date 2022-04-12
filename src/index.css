@@ -1,13 +1,30 @@
-body {
+@import url("./assets/font/styles/fonts.css");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --primary-color: #0466c8;
+  --secondary-color: #0353a4;
+  --gray: #f1f1f1;
+  --black: #383838;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body,
+input,
+button {
+  font-size: 1.4rem;
+  font-family: iranYekan;
+}
+
+h3 {
+  font-size: 2rem;
 }
