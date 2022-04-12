@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage";
 
 function App() {
   return (
-    <React.Fragment className="App">
+    <section className="App">
       <BrowserRouter>
         <Layout>
           <Routes>
@@ -14,7 +14,7 @@ function App() {
           </Routes>
         </Layout>
       </BrowserRouter>
-    </React.Fragment>
+    </section>
   );
 }
 
