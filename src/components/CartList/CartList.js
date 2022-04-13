@@ -1,7 +1,8 @@
-import { useCart } from "../context/Container";
+import { useCart, useCartActions } from "../context/Container";
 import style from "./CartList.module.css";
 const CartList = () => {
   const cart = useCart();
+  const dispatch = useCartActions();
   return (
     <section>
       <section className={`container ${style.productList}`}>
@@ -14,7 +15,21 @@ const CartList = () => {
               <div>
                 <h4 className={style.title}>{item.name}</h4>
                 <p className={style.price}>{item.price}</p>
-                <button>delete</button>
+                <p className={style.price}>{item.quantity}</p>
+                <button
+                  onClick={() =>
+                    dispatch({ type: "INCREMENT_CART", payload: item })
+                  }
+                >
+                  +
+                </button>
+                <button
+                  onClick={() =>
+                    dispatch({ type: "DECREMENT_CART", payload: item })
+                  }
+                >
+                  -
+                </button>
               </div>
             </section>
           );

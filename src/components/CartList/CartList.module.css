@@ -1,15 +1,18 @@
 .productList {
-    background-color: antiquewhite;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    gap: 3rem;
-    justify-items: center;
-  }
-  .product {
-    padding: 1rem;
-    background-color: #ccc;
-  }
-  .img img {
-    width: 300px;
-  }
-  
+  background-color: antiquewhite;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 3rem;
+  justify-items: center;
+}
+.product {
+  padding: 1rem;
+  background-color: #ccc;
+}
+.img img {
+  width: 300px;
+}
+
+.product button {
+  padding: 0.5rem;
+}
