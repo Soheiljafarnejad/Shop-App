@@ -9,7 +9,7 @@
 
 :root {
   --color: #fdfcfc;
-  --gray: #a8a4ac;
+  --gray: #e4e4e4;
   --color: #4e4c55;
   --color: #678284;
   --primary-color: #EE384E;
@@ -67,4 +67,10 @@ input:hover {
 a {
   color: var(--text-color);
   text-decoration: none;
+}
+
+@media screen and (max-width:400px) {
+ body{
+   font-size: 1.3rem;
+ }
 }
