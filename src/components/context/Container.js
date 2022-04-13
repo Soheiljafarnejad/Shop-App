@@ -7,7 +7,16 @@ const Container = ({ children }) => {
   const reducer = (state, action) => {
     switch (action.type) {
       case "ADD_TO_CART":
-        return [...state, action.payload];
+        const index = state.findIndex((item) => item.id === action.payload.id);
+        if (index < 0) return [...state, { ...action.payload, quantity: 1 }];
+        else {
+          const clone = [...state];
+          const selectItem = { ...clone[index] };
+          selectItem.quantity = selectItem.quantity + 1;
+          clone[index] = selectItem;
+          return clone;
+        }
+
       default:
         return state;
     }

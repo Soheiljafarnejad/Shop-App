@@ -4,7 +4,6 @@ import style from "./ProductList.module.css";
 const ProductList = () => {
   const dispatch = useCartActions();
   const cart = useCart();
-  console.log(cart);
   return (
     <section className={`container ${style.productList}`}>
       {products.map((item) => {
@@ -19,7 +18,9 @@ const ProductList = () => {
               <button
                 onClick={() => dispatch({ type: "ADD_TO_CART", payload: item })}
               >
-                add to cart
+                {cart.findIndex((cart) => cart.id === item.id) < 0
+                  ? "add to cart"
+                  : "added"}
               </button>
             </div>
           </section>
