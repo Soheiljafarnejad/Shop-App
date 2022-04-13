@@ -8,10 +8,10 @@
 }
 
 :root {
-  --primary-color: #0466c8;
-  --secondary-color: #0353a4;
-  --gray: #f1f1f1;
-  --black: #383838;
+  --primary-color: #2343a3;
+  --secondary-color: rgba(35, 67, 163, 0.08);
+  --text-color: #667494;
+  --title-color: #364163;
   --transition: all 0.3s ease-in-out;
 }
 

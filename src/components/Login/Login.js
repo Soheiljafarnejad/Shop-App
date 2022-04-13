@@ -43,7 +43,7 @@ const Login = () => {
   return (
     <section className={style.login}>
       <div className={style.title}>
-        <h2>ورود به پورتال</h2>
+        <h2>ورود </h2>
         <p>لطفا نام کاربری و رمز عبور خود را وارد کنید.</p>
       </div>
 
@@ -66,7 +66,6 @@ const Login = () => {
             formik={formik}
             props={{ minLength: 3, maxLength: 64, placeholder: "کلمه عبور" }}
           />
-          <Link to="/password-reset">کلمه عبور را فراموش کرده اید؟</Link>
         </div>
 
         <div className={`${style.formControl} ${style.remember}`}>
@@ -81,7 +80,7 @@ const Login = () => {
           <button className={style.submit} type="submit">
             ورود
           </button>
-          <Link to="sign-up">حساب کاربری نساخته اید؟ ثبت نام</Link>
+          <Link to="/sign-up">حساب کاربری نساخته اید؟ ثبت نام</Link>
         </div>
       </form>
     </section>
