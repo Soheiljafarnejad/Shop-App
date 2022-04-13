@@ -1,0 +1,76 @@
+/* error */
+span {
+  visibility: hidden;
+}
+
+.error {
+  visibility: visible;
+  display: inline-flex;
+  align-items: flex-start;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: red;
+}
+
+.error svg{
+  margin-left: 0.3rem;
+}
+
+
+/* checkBox */
+.checkBox label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.1rem;
+  border: 1px solid var(--text-color);
+  background-color: white;
+  color: white;
+  margin-left: 0.5rem;
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+.checked {
+  background-color: var(--primary-color) !important;
+}
+input[type="checkbox"] {
+  display: none;
+  width: auto;
+  cursor: pointer;
+  padding: 1rem;
+}
+
+.password {
+  position: relative;
+}
+
+.visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 2.2rem;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-color);
+}
+
+::placeholder {
+  color: var(--text-color);
+  font-size: 1.4rem;
+}

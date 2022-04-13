@@ -1,9 +1,11 @@
 import React from "react";
 import Layout from "./layout/Layout";
-import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
+import Login from "./components/Login/Login";
+import "./App.css";
 
 function App() {
   return (
@@ -13,8 +15,10 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </Layout>
+        <Toaster />
       </BrowserRouter>
     </section>
   );

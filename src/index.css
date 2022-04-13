@@ -12,6 +12,7 @@
   --secondary-color: #0353a4;
   --gray: #f1f1f1;
   --black: #383838;
+  --transition: all 0.3s ease-in-out;
 }
 
 html {
@@ -27,4 +28,38 @@ button {
 
 h3 {
   font-size: 2rem;
+}
+
+button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  outline: none;
+  padding: 1rem 2.5rem;
+  border-radius: 20px;
+  transition: var(--transition);
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+}
+
+input {
+  border: 2px solid var(--secondary-color);
+  padding: 0.75rem;
+  border-radius: 5px;
+  transition: var(--transition);
+  outline: none;
+  width: 100%;
+}
+
+input:hover {
+  border: 2px solid var(--primary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
 }

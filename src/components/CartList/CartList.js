@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useCart, useCartActions } from "../context/Container";
 import style from "./CartList.module.css";
 const CartList = () => {
@@ -9,6 +10,7 @@ const CartList = () => {
         <p>price{totalPrice + discount}$</p>
         <p>dispatch:{discount}$</p>
         <p>totalPrice:{totalPrice}$</p>
+        <Link to="/login">go to checkout</Link>
       </section>
       <section className={style.productList}>
         {cart.map((item) => {

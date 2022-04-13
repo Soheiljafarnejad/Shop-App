@@ -1,0 +1,68 @@
+.login {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 15rem;
+  height: 100%;
+}
+
+.title {
+  align-self: flex-start;
+}
+
+.title p {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.formControl {
+  margin: 2rem 0;
+}
+
+.formControl a {
+  display: block;
+  text-align: end;
+  font-size: 1.2rem;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.submit {
+  color: white;
+  background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 992px) {
+  .login {
+    width: 100%;
+    padding: 5rem 8rem;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .login {
+    width: 100%;
+    padding: 8rem 3rem;
+    border-radius: 5px;
+    height: auto;
+  }
+
+  .footer {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .submit {
+    margin-bottom: 2rem;
+  }
+  .title p {
+    margin-bottom: 1.5rem;
+  }
+}
