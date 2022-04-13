@@ -1,48 +1,60 @@
 import style from "./Navigation.module.css";
 import { NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useCart, useCartActions } from "../context/Container";
+import { BsCart2 } from "react-icons/bs";
+import { HiOutlineLogin } from "react-icons/hi";
 const Navigation = () => {
   const { cart, totalQuantity } = useCart();
   const dispatch = useCartActions();
-  const [toggle, setToggle] = useState(false);
-  const items = [
-    { to: "/", title: "Home" },
-    { to: "/cart", title: "cart" },
-  ];
 
   useEffect(() => {
     dispatch({ type: "TOTAL" });
   }, [cart, dispatch]);
 
   return (
-    <section className={`${style.navigation} ${toggle ? style.toggle : ""}`}>
-      <button onClick={() => setToggle(!toggle)} className={style.menu}>
-        <div className={style.one}></div>
-        <div className={style.two}></div>
-        <div className={style.there}></div>
-      </button>
+    <section className={style.navigation}>
       <div className={style.title}>
-        <h1>online shop</h1>
+        <NavLink
+          to="/"
+          className={(e) =>
+            `${style.loginBox} ${e.isActive ? `${style.activeLink}` : ""}`
+          }
+        >
+          <h1>دیجیکالا</h1>
+        </NavLink>
       </div>
-      <div>quantity:{totalQuantity}</div>
       <nav className={style.nav}>
         <ul>
-          {items.map((item) => {
-            return (
-              <li key={item.to}>
-                <NavLink
-                  className={(e) =>
-                    `${e.isActive ? `${style.activeLink}` : ""}`
-                  }
-                  to={item.to}
-                  onClick={() => setToggle(false)}
-                >
-                  <h3>{item.title}</h3>
-                </NavLink>
-              </li>
-            );
-          })}
+          <li>
+            <NavLink to="/cart">
+              <div className={style.cart}>
+                <BsCart2 className="icons" />
+                <span className={style.badge}>{totalQuantity}</span>
+              </div>
+            </NavLink>
+          </li>
+          <li>
+            <div className={style.profile}>
+              <NavLink
+                className={(e) =>
+                  `${style.loginBox} ${e.isActive ? `${style.activeLink}` : ""}`
+                }
+                to="/login"
+              >
+                <div className={style.login}>
+                  <HiOutlineLogin className="icons" />
+                  <span>ورود</span>
+                </div>
+              </NavLink>
+              <NavLink
+                className={(e) => `${e.isActive ? `${style.activeLink}` : ""}`}
+                to="/sign-up"
+              >
+                <span>ثبت نام</span>
+              </NavLink>
+            </div>
+          </li>
         </ul>
       </nav>
     </section>

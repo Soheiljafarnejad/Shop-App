@@ -1,14 +1,14 @@
 .navigation {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   flex-wrap: wrap;
-  height: 55px;
-  box-shadow: 0 4px 2px -2px var(--gray);
+  padding-top: 0.6rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid var(--gray);
 }
 
 .title {
-  order: 1;
   height: 100%;
   display: flex;
   align-items: center;
@@ -19,6 +19,7 @@
 .nav ul {
   flex-grow: 1;
   display: flex;
+  align-items: center;
   background-color: white;
   padding-left: 0.75rem;
 }
@@ -35,69 +36,46 @@
   color: var(--primary-color) !important;
 }
 
-.menu {
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--gray);
+  padding: 0.5rem 0.7rem;
+  border-radius: 7px;
+}
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.5rem;
+  border-left: 1px solid var(--gray);
+}
+.login span {
+  padding: 0 0.5rem;
+}
+
+.cart {
   position: relative;
-  display: none;
-  border: none;
-  outline: none;
-  background-color: white;
-  cursor: pointer;
-  padding-left: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
 }
 
-.menu div {
-  background-color: var(--black);
-  width: 27px;
-  height: 3px;
-  margin: 5px 0;
-  transition: all 0.2s linear;
-  border-radius: 30px;
-}
-
-@media screen and (max-width: 576px) {
-  .title {
-    order: 0;
-  }
-
-  .nav {
-    display: none;
-  }
-
-  .toggle .nav {
-    position: relative;
-    display: block;
-    z-index: 999;
-    width: 100%;
-  }
-
-  .toggle ul {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    margin-right: 0 !important;
-    border-top: 1px solid var(--gray);
-  }
-
-  .toggle li {
-    padding: 1rem 1.5rem;
-    border-bottom: 1px solid var(--gray);
-  }
-  .toggle .menu .one {
-    position: absolute;
-    transform: rotate(45deg);
-  }
-  .toggle .menu .two {
-    opacity: 0;
-  }
-  .toggle .menu .there {
-    position: absolute;
-    transform: rotate(-45deg);
-    top: 0px;
-  }
-  .menu {
-    display: block;
-  }
+.cart .badge {
+  position: absolute;
+  bottom: -13px;
+  left: 12px;
+  font-family: sans-serif;
+  background-color: var(--primary-color);
+  color: white;
+  width: 21px;
+  height: 21px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

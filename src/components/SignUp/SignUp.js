@@ -3,9 +3,11 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import Input from "../../common/Input";
 import TermsBox from "../../common/TermsBox";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 const Signup = () => {
+  const navigate = useNavigate();
+
   const initialValues = {
     email: "",
     password: "",
@@ -17,7 +19,8 @@ const Signup = () => {
   };
 
   const onSubmit = (values) => {
-    // post to Api
+    // post values to Api
+    navigate("/");
     toast.success("ثبت نام با موفقیت انجام شد.");
   };
 

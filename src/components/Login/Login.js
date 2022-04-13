@@ -3,11 +3,12 @@ import Input from "../../common/Input";
 import TermsBox from "../../common/TermsBox";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { Link } from "react-router-dom";
-import toast from 'react-hot-toast';
-
+import { Link, useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const initialValues = {
     email: "",
     password: "",
@@ -15,8 +16,9 @@ const Login = () => {
   };
 
   const onSubmit = (values) => {
-    // post to Api
-    toast.success("ورود با موفقیت انجام شد.")
+    // post values to Api
+    navigate("/");
+    toast.success("ورود با موفقیت انجام شد.");
   };
 
   const validationSchema = yup.object({

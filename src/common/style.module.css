@@ -1,5 +1,5 @@
 /* error */
-span {
+.formControl span {
   visibility: hidden;
 }
 
@@ -39,7 +39,7 @@ span {
 .checked {
   background-color: var(--primary-color) !important;
 }
-input[type="checkbox"] {
+.formControl input[type="checkbox"] {
   display: none;
   width: auto;
   cursor: pointer;
@@ -64,7 +64,7 @@ input[type="checkbox"] {
   transform: translateY(-50%);
 }
 
-label {
+.formControl label {
   display: block;
   margin-bottom: 0.5rem;
   color: var(--text-color);

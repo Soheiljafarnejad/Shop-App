@@ -4,3 +4,8 @@
   padding: 0 1.5rem;
   margin: 2rem auto;
 }
+
+.icons {
+  font-size: 2rem;
+  cursor: pointer;
+}
