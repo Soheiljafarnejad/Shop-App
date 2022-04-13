@@ -1,12 +1,14 @@
 import { useCart, useCartActions } from "../context/Container";
 import style from "./CartList.module.css";
 const CartList = () => {
-  const { cart, totalPrice } = useCart();
+  const { cart, totalPrice, discount } = useCart();
   const dispatch = useCartActions();
   return (
     <section className={`container ${style.cart}`}>
       <section className={style.cartSummary}>
-        <p>price:{totalPrice}</p>
+        <p>price{totalPrice + discount}$</p>
+        <p>dispatch:{discount}$</p>
+        <p>totalPrice:{totalPrice}$</p>
       </section>
       <section className={style.productList}>
         {cart.map((item) => {

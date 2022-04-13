@@ -8,16 +8,23 @@ const Container = ({ children }) => {
     cart: [],
     totalPrice: 0,
     totalQuantity: 0,
+    discount: 0,
   };
 
   const totalHandler = (state) => {
     const totalPrice = state.cart.reduce((total, item) => {
-      return total + item.price * item.quantity;
+      return total + item.offPrice * item.quantity;
     }, initState.totalPrice);
+
     const totalQuantity = state.cart.reduce((total, item) => {
       return total + item.quantity;
     }, initState.totalQuantity);
-    return { ...state, totalPrice, totalQuantity };
+
+    const discount = state.cart.reduce((total, item) => {
+      return total + (item.price - item.offPrice);
+    }, initState.discount);
+
+    return { ...state, totalPrice, totalQuantity, discount };
   };
 
   const addCartHandler = (state, action) => {
