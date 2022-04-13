@@ -7,13 +7,17 @@ const Container = ({ children }) => {
   const initState = {
     cart: [],
     totalPrice: 0,
+    totalQuantity: 0,
   };
 
-  const totalPriceHandler = (state) => {
+  const totalHandler = (state) => {
     const totalPrice = state.cart.reduce((total, item) => {
       return total + item.price * item.quantity;
     }, initState.totalPrice);
-    return { ...state, totalPrice: totalPrice };
+    const totalQuantity = state.cart.reduce((total, item) => {
+      return total + item.quantity;
+    }, initState.totalQuantity);
+    return { ...state, totalPrice, totalQuantity };
   };
 
   const addCartHandler = (state, action) => {
@@ -62,8 +66,8 @@ const Container = ({ children }) => {
 
       case "INCREMENT_CART":
         return incrementHandler(state, action);
-      case "TOTAL_PRICE":
-        return totalPriceHandler(state);
+      case "TOTAL":
+        return totalHandler(state);
       default:
         return state;
     }

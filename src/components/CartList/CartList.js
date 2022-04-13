@@ -1,14 +1,8 @@
-import { useEffect } from "react";
 import { useCart, useCartActions } from "../context/Container";
 import style from "./CartList.module.css";
 const CartList = () => {
   const { cart, totalPrice } = useCart();
   const dispatch = useCartActions();
-
-  useEffect(() => {
-    dispatch({ type: "TOTAL_PRICE" });
-  }, [cart, dispatch]);
-
   return (
     <section className={`container ${style.cart}`}>
       <section className={style.cartSummary}>

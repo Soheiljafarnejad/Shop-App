@@ -1,12 +1,19 @@
 import style from "./Navigation.module.css";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useCart, useCartActions } from "../context/Container";
 const Navigation = () => {
+  const { cart, totalQuantity } = useCart();
+  const dispatch = useCartActions();
   const [toggle, setToggle] = useState(false);
   const items = [
     { to: "/", title: "Home" },
     { to: "/cart", title: "cart" },
   ];
+
+  useEffect(() => {
+    dispatch({ type: "TOTAL" });
+  }, [cart, dispatch]);
 
   return (
     <section className={`${style.navigation} ${toggle ? style.toggle : ""}`}>
@@ -18,6 +25,7 @@ const Navigation = () => {
       <div className={style.title}>
         <h1>online shop</h1>
       </div>
+      <div>quantity:{totalQuantity}</div>
       <nav className={style.nav}>
         <ul>
           {items.map((item) => {
