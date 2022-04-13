@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .img img {
   width: 100%;
   max-width: 300px;
@@ -62,7 +63,7 @@
 .price .discount {
   margin: 0 1.5rem;
   text-decoration: line-through;
-  color: var(--gray);
+  opacity: 0.5;
 }
 
 .ofPrice {
@@ -75,6 +76,10 @@
 }
 
 @media screen and (max-width: 579px) {
+  .productList {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
   .product {
     display: flex;
     flex-direction: row;

@@ -4,8 +4,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0rem 15rem;
   height: 100%;
+  padding: 2rem 8rem !important;
 }
 
 .title {
@@ -13,8 +13,7 @@
 }
 
 .title p {
-  margin-top: 1.5rem;
-  margin-bottom: 3rem;
+  margin: 1.5rem 0;
 }
 
 .formControl {
@@ -41,17 +40,14 @@
 @media screen and (max-width: 992px) {
   .login {
     width: 100%;
-    padding: 5rem 8rem;
     border-radius: 5px;
   }
 }
 
 @media screen and (max-width: 576px) {
   .login {
-    width: 100%;
-    padding: 8rem 3rem;
-    border-radius: 5px;
     height: auto;
+    padding: 2rem !important;
   }
 
   .footer {
@@ -61,8 +57,5 @@
   }
   .submit {
     margin-bottom: 2rem;
-  }
-  .title p {
-    margin-bottom: 1.5rem;
   }
 }

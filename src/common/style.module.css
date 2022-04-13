@@ -3,7 +3,7 @@
   visibility: hidden;
 }
 
-.error {
+.formControl .error {
   visibility: visible;
   display: inline-flex;
   align-items: flex-start;
@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: center;
   padding: 0.1rem;
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--gray);
   background-color: white;
   color: white;
   margin-left: 0.5rem;

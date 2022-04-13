@@ -43,7 +43,7 @@ const Login = () => {
   });
 
   return (
-    <section className={style.login}>
+    <section className={`container ${style.login}`}>
       <div className={style.title}>
         <h2>ورود </h2>
         <p>لطفا نام کاربری و رمز عبور خود را وارد کنید.</p>

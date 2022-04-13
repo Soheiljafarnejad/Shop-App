@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 10rem 12rem;
+  padding: 2rem 8rem;
 }
 
 .title {
@@ -12,8 +12,7 @@
 }
 
 .title p {
-  margin-top: 1.5rem;
-  margin-bottom: 3rem;
+  margin: 1.5rem 0;
 }
 
 form {
@@ -49,18 +48,14 @@ form {
 @media screen and (max-width: 992px) {
   .signUp {
     width: 100%;
-    padding: 5rem;
     border-radius: 5px;
   }
 }
 
 @media screen and (max-width: 576px) {
   .signUp {
-    width: 100%;
-    padding: 5rem 2rem;
-    border-radius: 5px;
+    padding: 2rem;
   }
-
   .footer {
     display: flex;
     align-items: flex-start;
