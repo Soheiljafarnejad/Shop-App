@@ -1,11 +1,20 @@
+import { useEffect } from "react";
 import { useCart, useCartActions } from "../context/Container";
 import style from "./CartList.module.css";
 const CartList = () => {
-  const cart = useCart();
+  const { cart, totalPrice } = useCart();
   const dispatch = useCartActions();
+
+  useEffect(() => {
+    dispatch({ type: "TOTAL_PRICE" });
+  }, [cart, dispatch]);
+
   return (
-    <section>
-      <section className={`container ${style.productList}`}>
+    <section className={`container ${style.cart}`}>
+      <section className={style.cartSummary}>
+        <p>price:{totalPrice}</p>
+      </section>
+      <section className={style.productList}>
         {cart.map((item) => {
           return (
             <section key={item.id} className={style.product}>
@@ -13,9 +22,9 @@ const CartList = () => {
                 <img src={item.image} alt={item.name} />
               </div>
               <div>
-                <h4 className={style.title}>{item.name}</h4>
-                <p className={style.price}>{item.price}</p>
-                <p className={style.price}>{item.quantity}</p>
+                <h4>{item.name}</h4>
+                <p>{item.price * item.quantity}</p>
+                <p>{item.quantity}</p>
                 <button
                   onClick={() =>
                     dispatch({ type: "INCREMENT_CART", payload: item })

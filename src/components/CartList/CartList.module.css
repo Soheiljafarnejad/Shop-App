@@ -1,9 +1,17 @@
+.cart {
+  display: flex;
+}
+.cartSummary {
+  background-color: #ccc;
+  padding: 2rem;
+}
 .productList {
   background-color: antiquewhite;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 3rem;
   justify-items: center;
+  flex-grow: 1;
 }
 .product {
   padding: 1rem;

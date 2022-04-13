@@ -3,7 +3,7 @@ import { useCart, useCartActions } from "../context/Container";
 import style from "./ProductList.module.css";
 const ProductList = () => {
   const dispatch = useCartActions();
-  const cart = useCart();
+  const { cart } = useCart();
   return (
     <section className={`container ${style.productList}`}>
       {products.map((item) => {
