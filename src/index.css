@@ -9,9 +9,7 @@
 
 :root {
   --color: #fdfcfc;
-  --gray: #e4e4e4;
-  --color: #4e4c55;
-  --color: #678284;
+  --gray: #bfc0c2;
   --primary-color: #EE384E;
   --secondary-color: rgba(35, 67, 163, 0.08);
   --text-color: #171619;
@@ -26,7 +24,7 @@ html {
 body,
 input,
 button {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-family: iranYekan;
   color: var(--text-color);
 }
