@@ -1,12 +1,6 @@
+import Cart from ".././components/CartNavigation/Cart/Cart";
 const NextCartPage = () => {
-    return ( 
-    
-    
-    <section>
-<h3>hiiiiiii</h3>
-    </section> 
-    
-    );
-}
- 
+  return <Cart />;
+};
+
 export default NextCartPage;

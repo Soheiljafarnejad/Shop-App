@@ -13,9 +13,8 @@ const CartList = () => {
         {path.map((item) => {
           return (
             <NavLink
-              className={(e) =>
-                `${e.isActive ? `${style.activeLink}` : ""}`
-              }
+              key={item.to}
+              className={(e) => `${e.isActive ? `${style.activeLink}` : ""}`}
               to={item.to}
             >
               <h3>{item.title}</h3>
@@ -23,6 +22,7 @@ const CartList = () => {
           );
         })}
       </div>
+
       <Outlet />
     </section>
   );

@@ -1,3 +1,27 @@
+.cartList {
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  border: 1px solid var(--gray);
+  justify-items: center;
+  flex-grow: 1;
+  border-radius: 8px;
+}
+
+.cartList div + section {
+  border: none;
+  padding-top: 0;
+}
+.containerHeader {
+  width: 100%;
+  padding: 2rem;
+  padding-bottom: 0;
+}
+
+.containerHeader span {
+  color: var(--gray);
+  line-height: 2.5;
+}
+
 .cart {
   width: 100%;
   display: flex;
@@ -88,5 +112,9 @@
 @media screen and (max-width: 992px) {
   .cart {
     padding-bottom: 2rem;
+  }
+  .cartList {
+    width: 100%;
+    border: 0;
   }
 }

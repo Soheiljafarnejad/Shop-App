@@ -5,10 +5,9 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
-import Login from "./components/Login/Login";
-import Signup from "./components/SignUp/SignUp";
-import NextCartPage from "./pages/NextCartPage";
-import InCartPage from "./pages/InCartPage";
+import InCartPage from "./pages/InCartPage/InCartPage";
+import Login from "./pages/LoginPage/Login";
+import Signup from "./pages/SignUpPage/SignUp";
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/cart" element={<CartPage />}>
-              <Route path="next" element={<NextCartPage />} />
+              {/* <Route path="next" element={<NextCartPage />} /> */}
               <Route path="in" element={<InCartPage />} />
             </Route>
             <Route path="/login" element={<Login />} />
