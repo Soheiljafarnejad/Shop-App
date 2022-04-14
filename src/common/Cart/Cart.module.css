@@ -12,6 +12,9 @@
   padding-top: 0;
 }
 .containerHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 100%;
   padding: 2rem;
   padding-bottom: 0;
@@ -20,6 +23,11 @@
 .containerHeader span {
   color: var(--gray);
   line-height: 2.5;
+}
+
+.link {
+  color: #19bfd3;
+  cursor: pointer;
 }
 
 .cart {

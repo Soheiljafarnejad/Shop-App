@@ -4,10 +4,11 @@ import Layout from "./layout/Layout";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import HomePage from "./pages/HomePage";
-import CartPage from "./pages/CartPage";
-import InCartPage from "./pages/InCartPage/InCartPage";
 import Login from "./pages/LoginPage/Login";
 import Signup from "./pages/SignUpPage/SignUp";
+import CartPage from "./pages/CartPage";
+import InCartPage from "./pages/InCartPage/InCartPage";
+import NextCartPage from "./pages/NextCartPage/NextCartPage";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/cart" element={<CartPage />}>
-              {/* <Route path="next" element={<NextCartPage />} /> */}
+              <Route path="next" element={<NextCartPage />} />
               <Route path="in" element={<InCartPage />} />
             </Route>
             <Route path="/login" element={<Login />} />

@@ -6,15 +6,20 @@ import { AiOutlineSafety } from "react-icons/ai";
 import { FiTruck } from "react-icons/fi";
 import { VscSymbolRuler } from "react-icons/vsc";
 import { BiStoreAlt } from "react-icons/bi";
-import { useCart, useCartActions } from "../../components/context/Container";
-const Cart = () => {
-  const { cart } = useCart();
-  const dispatch = useCartActions();
+const Cart = ({ cart, dispatch }) => {
   return (
     <section className={style.cartList}>
       <div className={style.containerHeader}>
-        <p>سبد خرید شما</p>
-        <span>{cart.length} کالا</span>
+        <div>
+          <p>سبد خرید شما</p>
+          <span>{cart.length} کالا</span>
+        </div>
+        <p
+          onClick={() => dispatch({ type: "CHANGE_CART" })}
+          className={style.link}
+        >
+          انتقال به خرید بعدی
+        </p>
       </div>
       {cart.map((item) => {
         return (

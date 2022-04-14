@@ -1,21 +1,20 @@
-import { useCart, useCartActions } from "../../components/context/Container";
+import { useCart } from "../../components/context/Container";
 import EmptyCom from "../../components/Empty/Empty";
 import Cart from "../../common/Cart/Cart";
 import CartSummary from "../../common/CartSummary/CartSummary";
-import style from "./InCartPage.module.css";
+import style from "./NextCartPage.module.css";
 
-const InCartPage = () => {
+const NextCartPage = () => {
   const { cart } = useCart();
-  const dispatch = useCartActions();
 
   return cart.length === 0 ? (
     <EmptyCom />
   ) : (
     <section className={style.container}>
-      <Cart cart={cart} dispatch={dispatch} />
+      <Cart />
       <CartSummary />
     </section>
   );
 };
 
-export default InCartPage;
+export default NextCartPage;

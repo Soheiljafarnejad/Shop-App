@@ -6,6 +6,7 @@ const ProductContainerContextDispatcher = createContext();
 const Container = ({ children }) => {
   const initState = {
     cart: [],
+    nextCart: [],
     totalPrice: 0,
     totalQuantity: 0,
     discount: 0,
