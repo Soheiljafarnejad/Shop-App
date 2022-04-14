@@ -1,7 +1,7 @@
 .cartList {
   display: grid;
   grid-template-columns: repeat(1fr);
-  border: 1px solid var(--gray);
+  border: 2px solid var(--secondary-color);
   justify-items: center;
   flex-grow: 1;
   border-radius: 8px;
@@ -37,7 +37,7 @@
   justify-content: flex-start;
   padding: 2rem 3rem;
   padding-bottom: 5rem;
-  border-top: 1px solid var(--gray);
+  border-top: 1px solid var(--secondary-color);
 }
 
 .cartRight {
@@ -51,7 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid var(--gray);
+  border: 2px solid var(--secondary-color);
   color: var(--primary-color);
   padding: 0.2rem 1rem;
   margin-top: 2rem;

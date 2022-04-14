@@ -84,7 +84,7 @@ const Signup = () => {
   return (
     <section className={` container ${style.signUp}`}>
       <div className={style.title}>
-        <h2>عضویت</h2>
+        <h4>عضویت</h4>
         <p>لطفا برای عضویت اطلاعات این فرم را تکمیل کنید.</p>
       </div>
 

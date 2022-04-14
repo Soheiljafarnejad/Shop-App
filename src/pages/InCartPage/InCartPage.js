@@ -14,7 +14,7 @@ const InCartPage = () => {
   const { cart, totalPrice, discount } = useSelector((store) => store.cart);
 
   return cart.length === 0 ? (
-    <EmptyCom title="سبد خرید شما خالی است!" />
+    <EmptyCom />
   ) : (
     <section className={style.container}>
       <Cart

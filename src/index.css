@@ -8,11 +8,11 @@
 }
 
 :root {
-  --color: #fdfcfc;
-  --gray: #B5B6BA;
-  --primary-color: #ee384e;
-  --secondary-color: rgba(35, 67, 163, 0.08);
-  --text-color: #171619;
+  --primary-color: #ef4056;
+  --secondary-color: rgb(238, 238, 238);
+  --body-color: #ffffff;
+  --gray: #62666d;
+  --text-color: #232933;
   --title-color: #364163;
   --transition: all 0.3s ease-in-out;
 }
@@ -27,14 +27,11 @@ button {
   font-size: 1.4rem;
   font-family: iranYekan;
   color: var(--text-color);
+  background-color: var(--body-color);
 }
 
 h2 {
   font-size: 1.5rem;
-}
-
-h3 {
-  font-size: 1.8rem;
 }
 
 h4 {
@@ -82,8 +79,8 @@ a {
   h2 {
     font-size: 1.4rem;
   }
-  h3 {
-    font-size: 1.5rem;
+  h3{
+    font-size: 1.3rem;
   }
   h4 {
     font-size: 2rem;

@@ -17,17 +17,41 @@
 .navCart a {
   padding-bottom: 0.3rem;
   align-self: center;
-  margin-left: 3rem;
+  margin-left: 2rem;
+  border-bottom: 4px solid var(--body-color);
 }
 
-.navCart h3 {
+.title {
+  padding: 0 1rem;
+  color: var(--gray);
   text-align: center;
+}
+.title p {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.4rem;
+  color: white;
+  background-color: var(--gray);
+  opacity: 0.8;
+  width: 21px;
+  height: 21px;
+  border-radius: 5px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .activeLink {
-  color: var(--primary-color);
-  border-bottom: 4px solid var(--primary-color);
+  border-bottom: 4px solid var(--primary-color) !important;
   border-radius: 2px;
+}
+
+.activeLink .title {
+  color: var(--primary-color);
+}
+
+.activeLink .title p {
+  background-color: var(--primary-color);
 }
 
 @media screen and (max-width: 992px) {
@@ -41,5 +65,10 @@
   .navCart a {
     flex-grow: 1;
     margin: 0;
+  }
+  .title p{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 }

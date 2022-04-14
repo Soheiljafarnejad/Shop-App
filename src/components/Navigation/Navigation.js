@@ -21,7 +21,7 @@ const Navigation = () => {
             `${style.loginBox} ${e.isActive ? `${style.activeLink}` : ""}`
           }
         >
-          <h1>دیجیکالا</h1>
+          <h1>فروشگاه</h1>
         </NavLink>
       </div>
       <nav className={style.nav}>

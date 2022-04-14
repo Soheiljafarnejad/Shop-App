@@ -3,8 +3,8 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--gray);
+  padding: 1rem ;
+  border-bottom: 2px solid var(--secondary-color);
 }
 
 .title {
@@ -39,7 +39,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--gray);
+  border: 2px solid var(--secondary-color);
   padding: 0.5rem 0.7rem;
   border-radius: 7px;
 }
@@ -48,7 +48,7 @@
   align-items: center;
   justify-content: center;
   margin-left: 0.5rem;
-  border-left: 1px solid var(--gray);
+  border-left: 2px solid var(--secondary-color);
 }
 .login span {
   padding: 0 0.5rem;
@@ -67,15 +67,15 @@
   position: absolute;
   bottom: -13px;
   left: 12px;
-  font-family: sans-serif;
   background-color: var(--primary-color);
   color: white;
-  width: 21px;
-  height: 21px;
+  width: 20px;
+  height: 23px;
   font-size: 1.2rem;
-  border-radius: 5px;
-  border: 1px solid white;
+  border-radius: 6px;
+  border: 2px solid white;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }

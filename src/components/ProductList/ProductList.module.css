@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  border: 1px solid var(--gray);
+  border: 2px solid var(--secondary-color);
   border-radius: 3px;
 }
 .img {
@@ -27,7 +27,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border-top: 1px solid var(--gray);
+  border-top: 2px solid var(--secondary-color);
   padding: 0.5rem;
 }
 
@@ -88,7 +88,7 @@
   }
   .body {
     border: none;
-    border-right: 1px solid var(--gray);
+    border-right: 2px solid var(--secondary-color);
     padding-right: 1rem;
     margin-right: 1rem;
   }

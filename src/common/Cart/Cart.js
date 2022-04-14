@@ -67,7 +67,7 @@ const Cart = ({
               </li>
               <li>
                 <AiOutlineSafety />
-                <span>گارانتی اصالت و سلامت فیزیکی کالا</span>
+                <span>گارانتی </span>
               </li>
               <li>
                 <VscSymbolRuler />
