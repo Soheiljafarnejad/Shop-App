@@ -58,4 +58,7 @@
   .submit {
     margin-bottom: 2rem;
   }
+  .remember{
+    margin-bottom: 0;
+  }
 }
