@@ -1,15 +1,15 @@
 import style from "./Navigation.module.css";
 import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
-import { useCart, useCartActions } from "../context/Container";
 import { BsCart2 } from "react-icons/bs";
 import { HiOutlineLogin } from "react-icons/hi";
+import { useDispatch, useSelector } from "react-redux";
+import { totalCart } from "../../redux/cartReducer";
 const Navigation = () => {
-  const { cart, totalQuantity } = useCart();
-  const dispatch = useCartActions();
-
+  const { cart, totalQuantity } = useSelector((store) => store.cart);
+  const dispatch = useDispatch();
   useEffect(() => {
-    dispatch({ type: "TOTAL" });
+    dispatch(totalCart());
   }, [cart, dispatch]);
 
   return (

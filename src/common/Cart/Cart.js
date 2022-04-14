@@ -6,19 +6,32 @@ import { AiOutlineSafety } from "react-icons/ai";
 import { FiTruck } from "react-icons/fi";
 import { VscSymbolRuler } from "react-icons/vsc";
 import { BiStoreAlt } from "react-icons/bi";
-const Cart = ({ cart, dispatch }) => {
+import { useDispatch } from "react-redux";
+const Cart = ({
+  cart,
+  changeCart,
+  incrementCart,
+  decrementCart,
+  clearCart,
+  title,
+  titleLink,
+}) => {
+  const dispatch = useDispatch();
+
+  const handler = () => {
+    dispatch(changeCart(cart));
+    dispatch(clearCart([]));
+  };
+
   return (
     <section className={style.cartList}>
       <div className={style.containerHeader}>
         <div>
-          <p>سبد خرید شما</p>
+          <p>{title}</p>
           <span>{cart.length} کالا</span>
         </div>
-        <p
-          onClick={() => dispatch({ type: "CHANGE_CART" })}
-          className={style.link}
-        >
-          انتقال به خرید بعدی
+        <p onClick={handler} className={style.link}>
+          {titleLink}
         </p>
       </div>
       {cart.map((item) => {
@@ -29,9 +42,7 @@ const Cart = ({ cart, dispatch }) => {
               <div className={style.btnBox}>
                 <BiPlus
                   className="icons"
-                  onClick={() =>
-                    dispatch({ type: "INCREMENT_CART", payload: item })
-                  }
+                  onClick={() => dispatch(incrementCart(item))}
                 />
                 <div className={style.quantity}>
                   <p>{item.quantity}</p>
@@ -40,16 +51,12 @@ const Cart = ({ cart, dispatch }) => {
                 {item.quantity === 1 ? (
                   <BiTrashAlt
                     className="icons"
-                    onClick={() =>
-                      dispatch({ type: "DECREMENT_CART", payload: item })
-                    }
+                    onClick={() => dispatch(decrementCart(item))}
                   />
                 ) : (
                   <BiMinus
                     className="icons"
-                    onClick={() =>
-                      dispatch({ type: "DECREMENT_CART", payload: item })
-                    }
+                    onClick={() => dispatch(decrementCart(item))}
                   />
                 )}
               </div>

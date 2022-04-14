@@ -1,11 +1,12 @@
 import { products } from "../../data";
-import { useCart, useCartActions } from "../context/Container";
 import style from "./ProductList.module.css";
 import { FiShoppingBag } from "react-icons/fi";
 import { BsBagCheck } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { addCart } from "../../redux/cartReducer";
 const ProductList = () => {
-  const dispatch = useCartActions();
-  const { cart } = useCart();
+  const dispatch = useDispatch();
+  const { cart } = useSelector((store) => store.cart);
   return (
     <section className={`container ${style.productList}`}>
       {products.map((item) => {
@@ -27,9 +28,7 @@ const ProductList = () => {
                   </div>
                 </div>
                 <button
-                  onClick={() =>
-                    dispatch({ type: "ADD_TO_CART", payload: item })
-                  }
+                  onClick={() => dispatch(addCart(item))}
                   className={`${
                     cart.findIndex((cart) => cart.id === item.id) < 0
                       ? ""
