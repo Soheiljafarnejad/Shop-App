@@ -16,7 +16,7 @@ const ProductList = () => {
             </div>
             <div className={style.body}>
               <div className={style.header}>
-                <h4 className={style.title}>{item.name}</h4>
+                <h2 className={style.title}>{item.name}</h2>
               </div>
               <div className={style.footer}>
                 <div className={style.price}>

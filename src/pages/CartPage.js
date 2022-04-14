@@ -1,8 +1,8 @@
-import CartList from "../components/CartList/CartList";
+import CartNav from "../components/CartNavigation/CartNav";
 const CartPage = () => {
   return (
     <>
-      <CartList />
+      <CartNav />
     </>
   );
 };

@@ -27,7 +27,7 @@ const Navigation = () => {
       <nav className={style.nav}>
         <ul>
           <li>
-            <NavLink to="/cart">
+            <NavLink to="/cart/in">
               <div className={style.cart}>
                 <BsCart2 className="icons" />
                 <span className={style.badge}>{totalQuantity}</span>

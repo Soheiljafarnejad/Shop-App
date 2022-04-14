@@ -6,7 +6,7 @@
   border: 1px solid var(--gray);
   border-radius: 8px;
   width: 100%;
-  padding: 4rem 1.5rem;
+  padding: 6rem 1.5rem;
 }
 
 .empty img {
@@ -34,6 +34,6 @@
     border: none;
     border-top: 1px solid var(--gray);
     border-radius: 0;
-    padding: 1.5rem;
+    padding-bottom: 3rem;
   }
 }

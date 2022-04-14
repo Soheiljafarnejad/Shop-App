@@ -1,0 +1,38 @@
+.cartContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+.navCart {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--gray);
+}
+
+.navCart a {
+  padding-bottom: 0.3rem;
+  align-self: center;
+  margin-left: 3rem;
+}
+
+.navCart h3 {
+  text-align: center;
+}
+
+.activeLink {
+  color: var(--primary-color);
+  border-bottom: 4px solid var(--primary-color);
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 992px) {
+  .cartContainer {
+    padding: 0;
+  }
+}
