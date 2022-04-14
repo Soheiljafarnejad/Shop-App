@@ -1,4 +1,4 @@
-import InCart from "../components/InCart/InCart";
+import InCart from "../components/CartNavigation/InCart/InCart";
 
 const InCartPage = () => {
   return <InCart />;

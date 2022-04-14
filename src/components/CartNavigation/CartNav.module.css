@@ -35,4 +35,12 @@
   .cartContainer {
     padding: 0;
   }
+  .navCart {
+    padding: 0 1.5rem;
+    justify-content: space-between;
+  }
+  .navCart a {
+    flex-grow: 1;
+    margin: 0;
+  }
 }
