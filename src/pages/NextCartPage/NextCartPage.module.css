@@ -41,9 +41,9 @@
   border: 1px solid var(--primary-color);
   width: 100%;
   text-align: center;
-  padding: 1rem 2rem;
+  padding: 1.2rem 2rem;
   border-radius: 8px;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   cursor: pointer;
 }
 
@@ -81,5 +81,6 @@
     margin: 0;
     margin-left: 1.5rem;
     padding: 1rem 0.5rem;
+    max-width: 215px;
   }
 }

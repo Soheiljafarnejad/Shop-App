@@ -64,13 +64,14 @@
 }
 
 .cart .badge {
+  font-family: Arial, Helvetica, sans-serif;
   position: absolute;
   bottom: -13px;
   left: 12px;
   background-color: var(--primary-color);
   color: white;
-  width: 20px;
-  height: 23px;
+  width: 22px;
+  height: 22px;
   font-size: 1.2rem;
   border-radius: 6px;
   border: 2px solid white;

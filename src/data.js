@@ -1,11 +1,7 @@
 export const products = [
   {
     name: "کفش مردانه سالومون راک مدل 411685",
-    description: [
-      { support: "سه ماه گارانتی" },
-      { support: "ارسال رایگان" },
-      { support: "اورجینال" },
-    ],
+    size: [38, 39, 40, 43, 44],
     price: 580000,
     offPrice: 550000,
     image: "https://s4.uupload.ir/files/item2_fc5s.jpg",
@@ -13,11 +9,7 @@ export const products = [
   },
   {
     name: "کفش مردانه شوپا مدل lgr3006-LightGrey",
-    description: [
-      { support: "سه ماه گارانتی" },
-      { support: "اورجینال" },
-      { support: "ارسال رایگان" },
-    ],
+    size: [37, 38, 41, 42, 44],
     price: 920000,
     offPrice: 890000,
     image: "https://s4.uupload.ir/files/item3_zvc9.jpg",
@@ -25,11 +17,7 @@ export const products = [
   },
   {
     name: "کفش مردانه آدیداس سفید مدل FX7979",
-    description: [
-      { support: "سه ماه گارانتی" },
-      { support: "اورجینال" },
-      { support: "ارسال رایگان" },
-    ],
+    size: [39, 40, 41, 42, 43],
     price: 750000,
     offPrice: 730000,
     image: "https://s4.uupload.ir/files/item4_zr94.jpg",
@@ -37,11 +25,7 @@ export const products = [
   },
   {
     name: " کفش کوهنوردی مدل jax کد 5320 ",
-    description: [
-      { support: "سه ماه گارانتی" },
-      { support: "اورجینال" },
-      { support: "ارسال رایگان" },
-    ],
+    size: [37, 39, 42, 43],
     price: 490000,
     offPrice: 480000,
     image: "https://s4.uupload.ir/files/item5_24ye.jpg",
@@ -49,11 +33,7 @@ export const products = [
   },
   {
     name: "کفش مردانه مدل کندو کد 9497",
-    description: [
-      { support: "سه ماه گارانتی" },
-      { support: "اورجینال" },
-      { support: "ارسال رایگان" },
-    ],
+    size: [37, 38, 40, 44],
     price: 320000,
     offPrice: 300000,
     image: "https://s4.uupload.ir/files/item6_7jfy.jpg",

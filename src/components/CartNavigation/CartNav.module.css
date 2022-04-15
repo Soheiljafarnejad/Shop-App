@@ -34,8 +34,8 @@
   color: white;
   background-color: var(--gray);
   opacity: 0.8;
-  width: 21px;
-  height: 21px;
+  width: 20px;
+  height: 20px;
   border-radius: 5px;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
@@ -52,6 +52,7 @@
 
 .activeLink .title p {
   background-color: var(--primary-color);
+  opacity: 1;
 }
 
 @media screen and (max-width: 992px) {
