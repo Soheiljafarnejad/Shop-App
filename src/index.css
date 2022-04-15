@@ -76,7 +76,7 @@ a {
   text-decoration: none;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 576px) {
   body {
     font-size: 1.3rem;
   }

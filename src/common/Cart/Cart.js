@@ -7,6 +7,7 @@ import { FiTruck } from "react-icons/fi";
 import { VscSymbolRuler } from "react-icons/vsc";
 import { BiStoreAlt } from "react-icons/bi";
 import { useDispatch } from "react-redux";
+import numberFormat from "../../utils/numberFormat";
 const Cart = ({
   cart,
   changeCart,
@@ -84,9 +85,9 @@ const Cart = ({
                 </span>
               </li>
               <li className={style.discount}>
-                {item.price - item.offPrice} تومان تخفیف
+                {numberFormat(item.price - item.offPrice)} تومان تخفیف
               </li>
-              <li className={style.price}>{item.offPrice} تومان</li>
+              <li className={style.price}>{numberFormat(item.offPrice)} تومان</li>
             </ul>
           </section>
         );

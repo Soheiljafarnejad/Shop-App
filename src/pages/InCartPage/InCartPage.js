@@ -9,6 +9,7 @@ import {
   incrementCart,
 } from "../../redux/cartReducer";
 import { changeNextCart } from "../../redux/nextCartReducer";
+import numberFormat from "../../utils/numberFormat";
 
 const InCartPage = () => {
   const { cart, totalPrice, discount } = useSelector((store) => store.cart);
@@ -29,11 +30,11 @@ const InCartPage = () => {
       <div className={style.cartSummary}>
         <div>
           <span>قیمت کالا</span>
-          <p>{totalPrice + discount} تومان</p>
+          <p>{numberFormat(totalPrice + discount)} تومان</p>
         </div>
         <div>
           <span>سود شما از این خرید</span>
-          <p>{discount} تومان</p>
+          <p>{numberFormat(discount)} تومان</p>
         </div>
         <p className={style.info}>
           هزینه ارسال براساس آدرس، زمان تحویل، وزن و حجم مرسوله شما محاسبه
@@ -42,7 +43,7 @@ const InCartPage = () => {
         <div className={style.cartSummaryTotal}>
           <div>
             <span>جمع سبد خرید</span>
-            <p>{totalPrice} تومان</p>
+            <p>{numberFormat(totalPrice)} تومان</p>
           </div>
 
           <Link to="/login">ادامه خرید</Link>
