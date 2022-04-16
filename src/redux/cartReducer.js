@@ -1,4 +1,5 @@
 const ADD_TO_CART = "ADD_TO_CART";
+const DELETE_CART = "DELETE_CART";
 const DECREMENT_CART = "DECREMENT_CART";
 const INCREMENT_CART = "INCREMENT_CART";
 const CHANGE_CART = "CHANGE_CART";
@@ -6,6 +7,9 @@ const TOTAL = "TOTAL";
 
 export const addCart = (data) => {
   return { type: ADD_TO_CART, payload: data };
+};
+export const deleteCart = (data) => {
+  return { type: DELETE_CART, payload: data };
 };
 export const decrementCart = (data) => {
   return { type: DECREMENT_CART, payload: data };
@@ -31,7 +35,8 @@ export const cartReducer = (state = initState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
       return addCartHandler(state, action);
-
+    case DELETE_CART:
+      return deleteHandler(state, action);
     case DECREMENT_CART:
       return decrementHandler(state, action);
 
@@ -80,8 +85,7 @@ const decrementHandler = (state, action) => {
   const clone = [...state.cart];
   const selectItem = { ...clone[index] };
   if (selectItem.quantity === 1) {
-    const filtered = state.cart.filter((item) => item.id !== action.payload.id);
-    return { ...state, cart: filtered };
+    return deleteHandler(state, action);
   }
   selectItem.quantity = selectItem.quantity - 1;
   clone[index] = selectItem;
@@ -99,4 +103,9 @@ const incrementHandler = (state, action) => {
 
 const changeDataHandler = (state, action) => {
   return { ...state, cart: action.payload };
+};
+
+const deleteHandler = (state, action) => {
+  const filtered = state.cart.filter((item) => item.id !== action.payload.id);
+  return { ...state, cart: filtered };
 };

@@ -8,7 +8,7 @@ import numberFormat from "../../utils/numberFormat";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import checked from "../../utils/cheked";
-import { addCart } from "../../redux/cartReducer";
+import { addCart, deleteCart } from "../../redux/cartReducer";
 const CartDetail = () => {
   const { cart } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
@@ -80,7 +80,13 @@ const CartDetail = () => {
             <p>{numberFormat(state.offPrice)} تومان</p>
           </div>
           {checked(cart, state) ? (
-            <button className={style.btnDelete} type="button">حذف از سبد خرید</button>
+            <button
+              className={style.btnDelete}
+              type="button"
+              onClick={() => dispatch(deleteCart(state))}
+            >
+              حذف از سبد خرید
+            </button>
           ) : (
             <button type="button" onClick={() => dispatch(addCart(state))}>
               اضافه به سبد خرید
