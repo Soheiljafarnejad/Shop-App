@@ -9,6 +9,7 @@ import Signup from "./pages/SignUpPage/SignUp";
 import CartPage from "./pages/CartPage";
 import InCartPage from "./pages/InCartPage/InCartPage";
 import NextCartPage from "./pages/NextCartPage/NextCartPage";
+import CartDetail from "./pages/CartDetailPage/CartDetail";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="next" element={<NextCartPage />} />
               <Route path="in" element={<InCartPage />} />
             </Route>
+            <Route path="/cart/:id" element={<CartDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<Signup />} />
           </Routes>

@@ -8,15 +8,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../../redux/cartReducer";
 import numberFormat from "../../utils/numberFormat";
 import checked from "../../utils/cheked";
+import { Link } from "react-router-dom";
 
 const ProductList = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector((store) => store.cart);
+  const clickHandler = (e, item) => {
+    e.preventDefault();
+    dispatch(addCart(item));
+  };
   return (
     <section className={`container ${style.productList}`}>
       {products.map((item) => {
         return (
-          <section key={item.id} className={style.product}>
+          <Link to={`/cart/${item.id}`} key={item.id} className={style.product} state={item}>
             <div className={style.img}>
               <img src={item.image} alt={item.name} />
             </div>
@@ -47,7 +52,7 @@ const ProductList = () => {
                   </div>
                 </div>
                 <button
-                  onClick={() => dispatch(addCart(item))}
+                  onClick={(e) => clickHandler(e, item)}
                   className={`${!checked(cart, item) ? "" : style.select}`}
                 >
                   {!checked(cart, item) ? (
@@ -58,7 +63,7 @@ const ProductList = () => {
                 </button>
               </div>
             </div>
-          </section>
+          </Link>
         );
       })}
     </section>

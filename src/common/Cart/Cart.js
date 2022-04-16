@@ -87,7 +87,9 @@ const Cart = ({
               <li className={style.discount}>
                 {numberFormat(item.price - item.offPrice)} تومان تخفیف
               </li>
-              <li className={style.price}>{numberFormat(item.offPrice)} تومان</li>
+              <li className={style.price}>
+                {numberFormat(item.offPrice)} تومان
+              </li>
             </ul>
           </section>
         );
