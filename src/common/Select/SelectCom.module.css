@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 1.5rem;
+  margin: 2rem 0;
+}
+
+.container span {
+  margin-bottom: 1rem;
+}
+
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.option input {
+  display: none;
+}
+.option label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 2px solid var(--secondary-color);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.option label.select {
+  border: 2px solid var(--blue);
+}
+
+.option input[type="radio"]:checked + label {
+  border: 2px solid var(--blue);
+}
+
+@media screen and (max-width:576px) {
+  .container {
+    margin-top: 0;
+  }
+}

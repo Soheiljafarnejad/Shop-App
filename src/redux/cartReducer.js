@@ -5,8 +5,8 @@ const INCREMENT_CART = "INCREMENT_CART";
 const CHANGE_CART = "CHANGE_CART";
 const TOTAL = "TOTAL";
 
-export const addCart = (data) => {
-  return { type: ADD_TO_CART, payload: data };
+export const addCart = (data, size) => {
+  return { type: ADD_TO_CART, payload: data, size };
 };
 export const deleteCart = (data) => {
   return { type: DELETE_CART, payload: data };
@@ -74,7 +74,9 @@ const addCartHandler = (state, action) => {
     const newCart = {
       ...action.payload,
       quantity: 1,
+      size: parseInt(action.size),
     };
+    console.log(newCart);
     return { ...state, cart: [...state.cart, newCart] };
   }
   return state;

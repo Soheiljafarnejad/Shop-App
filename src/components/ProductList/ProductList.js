@@ -13,9 +13,9 @@ import { Link } from "react-router-dom";
 const ProductList = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector((store) => store.cart);
-  const clickHandler = (e, item) => {
+  const clickHandler = (e, item, value) => {
     e.preventDefault();
-    dispatch(addCart(item));
+    dispatch(addCart(item, value));
   };
   return (
     <section className={`container ${style.productList}`}>
@@ -42,7 +42,7 @@ const ProductList = () => {
                 )}
                 <p className={style.star}>
                   <span>{item.star}</span>
-                  <AiTwotoneStar className="icons" />
+                  <AiTwotoneStar className="icons"  />
                 </p>
               </div>
               <div className={style.footer}>
@@ -56,7 +56,7 @@ const ProductList = () => {
                   </div>
                 </div>
                 <button
-                  onClick={(e) => clickHandler(e, item)}
+                  onClick={(e) => clickHandler(e, item, item.size[0])}
                   className={`${!checked(cart, item) ? "" : style.select}`}
                 >
                   {!checked(cart, item) ? (

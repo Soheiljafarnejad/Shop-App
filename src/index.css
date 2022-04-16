@@ -12,6 +12,9 @@
   --secondary-color: rgb(238, 238, 238);
   --body-color: #ffffff;
   --gray: #62666d;
+  --blue: #19bfd3;
+  --gold: #f9bc00;
+  --purple: #a63489;
   --text-color: #232933;
   --title-color: #364163;
   --transition: all 0.3s ease-in-out;
@@ -34,7 +37,7 @@ h2 {
   font-size: 1.5rem;
 }
 
-h3{
+h3 {
   font-size: 1.4rem;
 }
 

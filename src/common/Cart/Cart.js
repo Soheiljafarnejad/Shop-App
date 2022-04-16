@@ -77,7 +77,7 @@ const Cart = ({
               </li>
               <li>
                 <VscSymbolRuler />
-                <span>{item.size.join(",")}</span>
+                <span>سایز: {item.size}</span>
               </li>
               <li>
                 <BiStoreAlt />

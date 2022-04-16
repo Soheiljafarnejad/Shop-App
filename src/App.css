@@ -8,3 +8,14 @@
   font-size: 2rem;
   cursor: pointer;
 }
+
+.purple {
+  color: var(--purple);
+}
+
+.gold {
+  color: var(--gold);
+}
+.blue {
+  color: var(--blue);
+}

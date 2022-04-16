@@ -16,22 +16,23 @@
 }
 
 .Header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
   padding: 2rem;
   padding-bottom: 0;
 }
 
 .Header a {
-  text-align: end;
-  display: block;
+  margin-right: 1rem;
 }
 
 .Header h2 {
   font-size: 1.8rem;
-  margin: 0.5rem 0;
 }
 
 .link {
-  color: #19bfd3;
+  color: var(--blue);
   cursor: pointer;
 }
 
@@ -42,6 +43,24 @@
   justify-content: flex-start;
   padding: 2rem 3rem;
   padding-bottom: 5rem;
+}
+
+.cartBody {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 2rem;
+}
+
+.star {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.star svg {
+  margin-right: 0.5rem;
+  cursor: default;
 }
 
 .cartImg {
@@ -55,7 +74,6 @@
   flex-direction: column;
   align-items: flex-start;
   flex-grow: 1;
-  margin-right: 2rem;
   color: var(--gray);
   width: 100%;
 }
@@ -115,6 +133,7 @@
 
 .info li svg {
   margin-left: 0.5rem;
+  cursor: default;
 }
 
 .cartSummary button {
@@ -190,7 +209,10 @@
     padding-bottom: 2rem;
     flex-direction: column;
   }
-  .description {
+  .cartBody {
     margin: 0;
+  }
+  .star {
+    align-self: flex-end;
   }
 }

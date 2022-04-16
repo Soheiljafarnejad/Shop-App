@@ -28,7 +28,7 @@
   align-items: center;
   justify-content: center;
   padding: 0.1rem;
-  border: 1px solid var(--gray);
+  border: 1px solid var(--secondary-color);
   background-color: white;
   color: white;
   margin-left: 0.5rem;
