@@ -16,16 +16,18 @@
 }
 
 .Header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 100%;
   padding: 2rem;
   padding-bottom: 0;
 }
 
+.Header a {
+  text-align: end;
+  display: block;
+}
+
 .Header h2 {
   font-size: 1.8rem;
+  margin: 0.5rem 0;
 }
 
 .link {

@@ -8,6 +8,7 @@ import { VscSymbolRuler } from "react-icons/vsc";
 import { BiStoreAlt } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 import numberFormat from "../../utils/numberFormat";
+import { Link } from "react-router-dom";
 const Cart = ({
   cart,
   changeCart,
@@ -39,7 +40,11 @@ const Cart = ({
         return (
           <section key={item.id} className={style.cart}>
             <div className={style.cartRight}>
-              <img src={item.image} alt={item.name} />
+              <Link
+                to={{ pathname: `/cart/${item.id}`, search: `id=${item.id}` }}
+              >
+                <img src={item.image} alt={item.name} />
+              </Link>
               <div className={style.btnBox}>
                 <BiPlus
                   className="icons"

@@ -21,7 +21,11 @@ const ProductList = () => {
     <section className={`container ${style.productList}`}>
       {products.map((item) => {
         return (
-          <Link to={`/cart/${item.id}`} key={item.id} className={style.product} state={item}>
+          <Link
+            to={{ pathname: `/cart/${item.id}`, search: `id=${item.id}` }}
+            key={item.id}
+            className={style.product}
+          >
             <div className={style.img}>
               <img src={item.image} alt={item.name} />
             </div>

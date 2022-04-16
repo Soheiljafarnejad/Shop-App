@@ -9,47 +9,54 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import checked from "../../utils/cheked";
 import { addCart, deleteCart } from "../../redux/cartReducer";
+import queryString from "query-string";
+import { products } from "../../data";
+
 const CartDetail = () => {
   const { cart } = useSelector((store) => store.cart);
   const dispatch = useDispatch();
-  const { state } = useLocation();
+  const { search } = useLocation();
+  const parsed = queryString.parse(search);
+  const [state] = products.filter((item) => item.id === parseInt(parsed.id));
 
   return (
     <section className={`container ${style.container}`}>
       <section className={style.cartList}>
         <div className={style.Header}>
-          <h2>{state.name}</h2>
           <Link to="/" className={style.link}>
             برگشت
           </Link>
+          <h2>{state.name}</h2>
         </div>
         <section className={style.cart}>
           <img src={state.image} alt={state.name} className={style.cartImg} />
-          <ul className={style.description}>
-            <li>
-              <h3>ویژگی ها</h3>
-            </li>
-            <li>
-              <p>
-                کفی : <span>قابل تعویض</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                نحوه بسته شدن کفش : <span>یکسره</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                ویژگی‌های زیره : <span>انعطاف پذیر، مقاوم در برابر سایش</span>
-              </p>
-            </li>
-            <li>
-              <p>
-                ویژگی‌های تخصصی کفش : <span>قابلیت گردش هوا</span>
-              </p>
-            </li>
-          </ul>
+          <div>
+            <ul className={style.description}>
+              <li>
+                <h3>ویژگی ها</h3>
+              </li>
+              <li>
+                <p>
+                  کفی : <span>قابل تعویض</span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  نحوه بسته شدن کفش : <span>یکسره</span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  ویژگی‌های زیره : <span>انعطاف پذیر، مقاوم در برابر سایش</span>
+                </p>
+              </li>
+              <li>
+                <p>
+                  ویژگی‌های تخصصی کفش : <span>قابلیت گردش هوا</span>
+                </p>
+              </li>
+            </ul>
+          </div>
         </section>
       </section>
       <div className={style.cartSummary}>
