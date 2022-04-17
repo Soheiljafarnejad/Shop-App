@@ -10,7 +10,7 @@ import { RiRocketLine } from "react-icons/ri";
 import { useLocation } from "react-router-dom";
 import { AiTwotoneStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import checked from "../../utils/cheked";
+import checked from "../../utils/checked";
 import queryString from "query-string";
 import Select from "../../common/Select/SelectCom";
 import { useState } from "react";

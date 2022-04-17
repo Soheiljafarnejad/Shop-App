@@ -7,7 +7,7 @@ import { BsBagCheck } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../../redux/cartReducer";
 import numberFormat from "../../utils/numberFormat";
-import checked from "../../utils/cheked";
+import checked from "../../utils/checked";
 import { Link } from "react-router-dom";
 
 const ProductList = () => {

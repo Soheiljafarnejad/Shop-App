@@ -1,6 +1,6 @@
 import style from "./Login.module.css";
-import Input from "../../common/Input";
-import TermsBox from "../../common/TermsBox";
+import Input from "../../common/Forms/Input";
+import TermsBox from "../../common/Forms/TermsBox";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { Link, useNavigate } from "react-router-dom";

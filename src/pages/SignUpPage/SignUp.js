@@ -1,8 +1,8 @@
 import style from "./SignUp.module.css";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import Input from "../../common/Input";
-import TermsBox from "../../common/TermsBox";
+import Input from "../../common/Forms/Input";
+import TermsBox from "../../common/Forms/TermsBox";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 const Signup = () => {
