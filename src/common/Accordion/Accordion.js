@@ -1,5 +1,5 @@
 import style from "./Accordion.module.css";
-import { BiDownArrowAlt } from "react-icons/bi";
+import { CgArrowUpO } from "react-icons/cg";
 import { useState } from "react";
 const Accordion = ({ title, children }) => {
   const [toggle, setToggle] = useState(false);
@@ -7,7 +7,7 @@ const Accordion = ({ title, children }) => {
     <section className={`${style.accordion} ${toggle ? style.toggle : ""}`}>
       <div className={style.header} onClick={() => setToggle(!toggle)}>
         <p>{title}</p>
-        <BiDownArrowAlt className="icons" />
+        <CgArrowUpO className="icons" />
       </div>
       <div className={style.body}>{children}</div>
     </section>

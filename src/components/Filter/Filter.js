@@ -2,8 +2,9 @@ import { useState } from "react";
 import Accordion from "../../common/Accordion/Accordion";
 import InputRadio from "../../common/Accordion/InputRadio/InputRadio";
 import InputRange from "../../common/Accordion/InputRange/InputRange";
+import { BiLogInCircle } from "react-icons/bi";
 import style from "./Filter.module.css";
-const FilterCom = () => {
+const FilterCom = ({ setToggle }) => {
   const options = [
     { value: 37, label: `سایز 37` },
     { value: 38, label: `سایز 38` },
@@ -29,6 +30,10 @@ const FilterCom = () => {
   return (
     <section className={style.container}>
       <div className={style.header}>
+        <BiLogInCircle
+          className={`icons ${style.exitFilter}`}
+          onClick={() => setToggle(false)}
+        />
         <h3>فیلتر ها</h3>
         <p>حذف فیلتر</p>
       </div>

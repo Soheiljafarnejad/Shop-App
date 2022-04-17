@@ -3,3 +3,57 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
+.filter {
+  width: 25%;
+}
+
+.product {
+  width: 75%;
+}
+
+.slider {
+  display: none;
+}
+
+.slider__filter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  width: auto;
+}
+
+.slider__filter p {
+  margin-left: 0.8rem;
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .filter {
+    display: none;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: white;
+  }
+  .toggle {
+    display: block;
+  }
+  .product {
+    width: 100%;
+  }
+  .slider {
+    display: block;
+    width: 100%;
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
