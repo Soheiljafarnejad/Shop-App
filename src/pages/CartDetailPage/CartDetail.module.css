@@ -15,19 +15,19 @@
   flex-grow: 1;
 }
 
-.Header {
+.header {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
   padding: 2rem;
   padding-bottom: 0;
 }
 
-.Header a {
+.header a {
   margin-right: 1rem;
 }
 
-.Header h2 {
+.header h2 {
   font-size: 1.8rem;
 }
 
@@ -76,6 +76,10 @@
   flex-grow: 1;
   color: var(--gray);
   width: 100%;
+}
+
+.discount {
+  color: var(--primary-color);
 }
 
 .description li {
@@ -214,5 +218,8 @@
   }
   .star {
     align-self: flex-end;
+  }
+  .header a {
+    line-height: 1.8;
   }
 }

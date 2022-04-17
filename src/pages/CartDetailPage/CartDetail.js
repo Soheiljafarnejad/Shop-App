@@ -30,7 +30,7 @@ const CartDetail = () => {
   return (
     <section className={`container ${style.container}`}>
       <section className={style.cartList}>
-        <div className={style.Header}>
+        <div className={style.header}>
           <h2>{state.name}</h2>
           <Link to="/" className={style.link}>
             برگشت
@@ -45,10 +45,10 @@ const CartDetail = () => {
               value={value}
               title={`اندازه ${value}`}
             />
-              <p className={style.star}>
-                <span>{state.star}</span>
-                <AiTwotoneStar className="icons gold" />
-              </p>
+            <p className={style.star}>
+              <span>{state.star}</span>
+              <AiTwotoneStar className="icons gold" />
+            </p>
             <ul className={style.description}>
               <li>
                 <h3>ویژگی ها</h3>
@@ -94,14 +94,19 @@ const CartDetail = () => {
             <BiStoreAlt className="icons" />
             <span>موجود در انبار</span>
           </li>
-          <li>
-            <RiRocketLine className="icons purple" />
-            <span>ارسال سریع</span>
+          {state.fast && (
+            <li>
+              <RiRocketLine className="icons purple" />
+              <span>ارسال سریع</span>
+            </li>
+          )}
+          <li className={style.discount}>
+            <p> {numberFormat(state.price-state.offPrice)} تومان تخفیف </p>
           </li>
         </ul>
         <div className={style.cartSummaryFooter}>
           <div>
-            <span>قیمت</span>
+            <span>قیمت با تخفیف</span>
             <p>{numberFormat(state.offPrice)} تومان</p>
           </div>
           {checked(cart, state) ? (

@@ -62,7 +62,7 @@ const totalHandler = (state) => {
   }, initState.totalQuantity);
 
   const discount = state.cart.reduce((total, item) => {
-    return total + (item.price - item.offPrice);
+    return total + (item.price - item.offPrice) * item.quantity;
   }, initState.discount);
 
   return { ...state, totalPrice, totalQuantity, discount };
