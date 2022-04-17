@@ -1,0 +1,37 @@
+.option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.8rem 0;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary-color);
+}
+
+.option input {
+  display: none;
+}
+
+.option label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.option label svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 0.1rem;
+  margin-left: 1rem;
+  border-radius: 5px;
+  background-color: white;
+  color: white;
+  border: 1px solid var(--secondary-color);
+}
+
+.option input[type="radio"]:checked + label svg {
+  background-color: var(--primary-color);
+}

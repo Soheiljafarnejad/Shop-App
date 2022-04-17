@@ -18,7 +18,7 @@ const ProductList = () => {
     dispatch(addCart(item, value));
   };
   return (
-    <section className={`container ${style.productList}`}>
+    <section className={`${style.productList}`}>
       {products.map((item) => {
         return (
           <Link

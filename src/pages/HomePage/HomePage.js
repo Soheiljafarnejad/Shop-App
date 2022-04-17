@@ -3,7 +3,7 @@ import ProductList from "../../components/ProductList/ProductList";
 import FilterCom from "../../components/Filter/Filter";
 const HomePage = () => {
   return (
-    <section className={style.container}>
+    <section className={`container ${style.container}`}>
       <FilterCom />
 
       <ProductList />
