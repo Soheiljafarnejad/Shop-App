@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0.8rem 0;
+  padding: 1rem 0;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid var(--secondary-color);
 }
@@ -16,22 +16,25 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  width: 100%;
+  cursor: pointer;
 }
 
 .option label svg {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
   padding: 0.1rem;
   margin-left: 1rem;
   border-radius: 5px;
   background-color: white;
   color: white;
-  border: 1px solid var(--secondary-color);
+  border: 2px solid var(--text-color);
 }
 
 .option input[type="radio"]:checked + label svg {
-  background-color: var(--primary-color);
+  background-color: var(--blue);
+  border: 2px solid var(--blue);
 }

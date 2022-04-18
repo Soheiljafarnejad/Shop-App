@@ -32,5 +32,9 @@
   .header h3 {
     margin-left: auto;
     margin-right: 1.5rem;
+    font-size: 1.5rem;
+  }
+  .header p{
+    font-size: 1.4rem;
   }
 }

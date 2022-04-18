@@ -13,7 +13,10 @@ const InputRange = ({ name, value, onChange, min, max, step }) => {
         max={max}
         step={step}
       />
-      <label>از 0 تا {numberFormat(value)} تومان</label>
+      <label>
+        <span> از <strong>0</strong> تومان</span>
+        <span> تا <strong>{numberFormat(value)}</strong> تومان</span>
+      </label>
     </section>
   );
 };

@@ -34,8 +34,8 @@ const FilterCom = ({ setToggle }) => {
           className={`icons ${style.exitFilter}`}
           onClick={() => setToggle(false)}
         />
-        <h3>فیلتر ها</h3>
-        <p>حذف فیلتر</p>
+        <h3>فیلترها</h3>
+        <p>حذف فیلترها</p>
       </div>
       <Accordion title="سایز">
         <InputRadio

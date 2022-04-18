@@ -13,7 +13,7 @@ const HomePage = () => {
       <section className={style.product}>
         <section className={style.slider}>
           <div className={style.slider__filter} onClick={() => setToggle(true)}>
-            <p>فیلتر</p>
+            <p>فیلترها</p>
             <BiSliderAlt className="icons" />
           </div>
         </section>

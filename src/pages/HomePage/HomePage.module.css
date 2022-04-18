@@ -13,6 +13,7 @@
 }
 
 .slider {
+  font-size: 1.4rem;
   display: none;
 }
 
@@ -54,6 +55,6 @@
     display: block;
     width: 100%;
     padding: 0 1.5rem;
-    margin-bottom: 1rem;
+    padding-bottom: 1rem;
   }
 }
