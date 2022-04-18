@@ -1,5 +1,4 @@
 import "./App.css";
-import React from "react";
 import Layout from "./layout/Layout";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
@@ -22,7 +21,7 @@ function App() {
               <Route path="next" element={<NextCartPage />} />
               <Route path="in" element={<InCartPage />} />
             </Route>
-            <Route path="/cart/:id" element={<CartDetail />} />
+            <Route path="/:id" element={<CartDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<Signup />} />
           </Routes>

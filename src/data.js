@@ -50,3 +50,22 @@ export const products = [
     id: 5,
   },
 ];
+
+export const sizeOptions = [
+  { value: 37, label: `سایز 37` },
+  { value: 38, label: `سایز 38` },
+  { value: 39, label: `سایز 39` },
+  { value: 40, label: `سایز 40` },
+  { value: 41, label: `سایز 41` },
+  { value: 42, label: `سایز 42` },
+  { value: 43, label: `سایز 43` },
+  { value: 44, label: `سایز 44` },
+];
+
+export const sortOptions = [
+  { value: "all", label: "مرتبط ترین" },
+  { value: "high", label: "بیشترین قیمت" },
+  { value: "low", label: "کمترین قیمت" },
+  { value: "fast", label: "سریع ترین ارسال" },
+  { value: "star", label: "بیشترین خرید" },
+];

@@ -24,67 +24,68 @@ const ProductList = () => {
   useEffect(() => {
     dispatch(filterProduct());
   }, [dispatch]);
-  if (productList.length === 0)
-    return (
-      <Empty
-        title="نتیجه ای یافت نشد!"
-        description="ترکیب این فیلتر ها با هیچ کالایی هم خوانی ندارد."
-  
-      />
-    );
   return (
     <section className={`${style.productList}`}>
-      {productList.map((item) => {
-        return (
-          <Link
-            to={{ pathname: `/cart/${item.id}`, search: `id=${item.id}` }}
-            key={item.id}
-            className={style.product}
-          >
-            <div className={style.img}>
-              <img src={item.image} alt={item.name} />
-            </div>
-            <div className={style.description}>
-              <div className={style.header}>
-                <h2 className={style.title}>{item.name}</h2>
+      {productList.length === 0 ? (
+        <Empty
+          title="نتیجه ای یافت نشد!"
+          description="ترکیب این فیلتر ها با هیچ کالایی هم خوانی ندارد."
+        />
+      ) : (
+        productList.map((item) => {
+          return (
+            <Link
+              to={{ pathname: `/${item.id}`, search: `id=${item.id}` }}
+              key={item.id}
+              className={style.product}
+            >
+              <div className={style.img}>
+                <img src={item.image} alt={item.name} />
               </div>
-              <div className={style.body}>
-                {item.fast && (
-                  <p>
-                    <RiRocketLine className="icons" />
-                    <span>امکان ارسال سریع</span>
-                  </p>
-                )}
-                <p className={style.star}>
-                  <span>{item.star}</span>
-                  <AiTwotoneStar className="icons" />
-                </p>
-              </div>
-              <div className={style.footer}>
-                <div className={style.price}>
-                  <span>قیمت به تومان</span>
-                  <div>
-                    <p className={style.ofPrice}>
-                      {numberFormat(item.offPrice)}
-                    </p>
-                    <p className={style.discount}>{numberFormat(item.price)}</p>
-                  </div>
+              <div className={style.description}>
+                <div className={style.header}>
+                  <h2 className={style.title}>{item.name}</h2>
                 </div>
-                <button
-                  onClick={(e) => clickHandler(e, item, item.size[0])}
-                  className={`${!checked(cart, item) ? "" : style.select}`}
-                >
-                  {!checked(cart, item) ? (
-                    <FiShoppingBag className="icons" />
-                  ) : (
-                    <BsBagCheck className="icons" />
+                <div className={style.body}>
+                  {item.fast && (
+                    <p>
+                      <RiRocketLine className="icons" />
+                      <span>امکان ارسال سریع</span>
+                    </p>
                   )}
-                </button>
+                  <p className={style.star}>
+                    <span>{item.star}</span>
+                    <AiTwotoneStar className="icons" />
+                  </p>
+                </div>
+                <div className={style.footer}>
+                  <div className={style.price}>
+                    <span>قیمت به تومان</span>
+                    <div>
+                      <p className={style.ofPrice}>
+                        {numberFormat(item.offPrice)}
+                      </p>
+                      <p className={style.discount}>
+                        {numberFormat(item.price)}
+                      </p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={(e) => clickHandler(e, item, item.size[0])}
+                    className={`${!checked(cart, item) ? "" : style.select}`}
+                  >
+                    {!checked(cart, item) ? (
+                      <FiShoppingBag className="icons" />
+                    ) : (
+                      <BsBagCheck className="icons" />
+                    )}
+                  </button>
+                </div>
               </div>
-            </div>
-          </Link>
-        );
-      })}
+            </Link>
+          );
+        })
+      )}
     </section>
   );
 };

@@ -76,7 +76,6 @@ const addCartHandler = (state, action) => {
       quantity: 1,
       size: parseInt(action.size),
     };
-    console.log(newCart);
     return { ...state, cart: [...state.cart, newCart] };
   }
   return state;
