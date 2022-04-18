@@ -30,7 +30,7 @@ const Navigation = () => {
             <NavLink to="/cart/in">
               <div className={style.cart}>
                 <BsCart2 className="icons" />
-                <span className={style.badge}>{totalQuantity}</span>
+                <span className={`badge ${style.badge}`}>{totalQuantity}</span>
               </div>
             </NavLink>
           </li>

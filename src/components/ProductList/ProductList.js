@@ -8,6 +8,8 @@ import { addCart } from "../../redux/cartReducer";
 import numberFormat from "../../utils/numberFormat";
 import checked from "../../utils/checked";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { filtered } from "../../redux/productReducer";
 
 const ProductList = () => {
   const dispatch = useDispatch();
@@ -18,6 +20,14 @@ const ProductList = () => {
     e.preventDefault();
     dispatch(addCart(item, value));
   };
+  useEffect(() => {
+    dispatch(
+      filtered({
+        size: "",
+        price: 1500000,
+      })
+    );
+  }, [dispatch]);
   return (
     <section className={`${style.productList}`}>
       {productList.map((item) => {

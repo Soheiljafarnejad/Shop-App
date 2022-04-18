@@ -57,4 +57,16 @@
     padding: 0 1.5rem;
     padding-bottom: 1rem;
   }
+  .slider__filter .icon {
+    position: relative;
+  }
+  .badge {
+    position: absolute;
+    top: 1px;
+    left: 5px;
+    width: 6.5px;
+    height: 6.5px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+  }
 }

@@ -47,14 +47,16 @@ const FilterCom = ({ setToggle }) => {
         />
         <h3>
           فیلترها
-          <span className="badge">{filterItem.length}</span>
+          {filterItem.length > 0 && (
+            <span className="badge">{filterItem.length}</span>
+          )}
         </h3>
         <p onClick={deleteFilterHandler}>حذف فیلترها</p>
       </div>
       <Accordion title="سایز">
         <InputRadio
           name="size"
-          onChange={(e) => onChange(e)}
+          onChange={onChange}
           value={value.size}
           options={options}
         />

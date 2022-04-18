@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  padding: 1rem ;
+  padding: 1rem;
   border-bottom: 2px solid var(--secondary-color);
 }
 
@@ -64,19 +64,7 @@
 }
 
 .cart .badge {
-  font-family: Arial, Helvetica, sans-serif;
   position: absolute;
   bottom: -13px;
   left: 12px;
-  background-color: var(--primary-color);
-  color: white;
-  width: 22px;
-  height: 22px;
-  font-size: 1.2rem;
-  border-radius: 6px;
-  border: 2px solid white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
 }

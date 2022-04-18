@@ -25,20 +25,14 @@
   padding: 0 1rem;
   color: var(--gray);
   text-align: center;
-}
-.title p {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 0.4rem;
-  color: white;
-  background-color: var(--gray);
+}
+
+.title p {
   opacity: 0.8;
-  width: 20px;
-  height: 20px;
-  border-radius: 5px;
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--gray);
 }
 
 .activeLink {
@@ -66,10 +60,5 @@
   .navCart a {
     flex-grow: 1;
     margin: 0;
-  }
-  .title p{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
   }
 }

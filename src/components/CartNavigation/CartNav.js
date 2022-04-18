@@ -21,7 +21,7 @@ const CartList = () => {
             >
               <h3 className={style.title}>
                 <span> {item.title}</span>
-                <p>{item.value}</p>
+                <p className="badge">{item.value}</p>
               </h3>
             </NavLink>
           );
