@@ -15,7 +15,12 @@ const InCartPage = () => {
   const { cart, totalPrice, discount } = useSelector((store) => store.cart);
 
   return cart.length === 0 ? (
-    <EmptyCom />
+    <EmptyCom
+      title="سبد خرید شما خالی است!"
+      description="برای مشاهده محصولات به صفحه زیر بروید:"
+      titleLink="صفحه اصلی"
+      to="/"
+    />
   ) : (
     <section className={style.container}>
       <Cart

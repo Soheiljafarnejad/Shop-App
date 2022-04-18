@@ -26,21 +26,34 @@
   cursor: pointer;
 }
 
-.exitFilter {
-  display: none;
+.footer {
+  display:none;
+  border-top: 2px solid var(--secondary-color);
+  position: fixed;
+  background-color: white;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin-top: auto !important;
+  padding: 1.5rem;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 992px) {
-  .exitFilter {
-    display: block;
-    font-size: 2.5rem;
+  .container{
+    overflow-y: auto;
+    height: 100%;
   }
   .header h3 {
-    margin-left: auto;
-    margin-right: 2rem;
     font-size: 1.5rem;
   }
   .header p {
     font-size: 1.4rem;
+  }
+  .footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }

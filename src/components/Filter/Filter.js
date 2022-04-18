@@ -2,6 +2,7 @@ import Accordion from "../../common/Accordion/Accordion";
 import InputRadio from "../../common/Accordion/InputRadio/InputRadio";
 import InputRange from "../../common/Accordion/InputRange/InputRange";
 import { BiLogInCircle } from "react-icons/bi";
+import { IoIosArrowUp } from "react-icons/io";
 import style from "./Filter.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -10,7 +11,9 @@ import {
   filterValue,
 } from "../../redux/productReducer";
 const FilterCom = ({ setToggle }) => {
-  const { filterItem, total } = useSelector((store) => store.products);
+  const { filterItem, total, productList } = useSelector(
+    (store) => store.products
+  );
   const dispatch = useDispatch();
 
   const options = [
@@ -37,10 +40,6 @@ const FilterCom = ({ setToggle }) => {
   return (
     <section className={style.container}>
       <div className={style.header}>
-        <BiLogInCircle
-          className={`icons ${style.exitFilter}`}
-          onClick={() => setToggle(false)}
-        />
         <h3>
           فیلترها
           {total.length > 0 && <span className="badge">{total.length}</span>}
@@ -65,6 +64,10 @@ const FilterCom = ({ setToggle }) => {
           max={1000000}
         />
       </Accordion>
+      <div className={style.footer} onClick={() => setToggle(false)}>
+        <p>مشاهده {productList.length} کالا</p>
+        <IoIosArrowUp className="icons" />
+      </div>
     </section>
   );
 };

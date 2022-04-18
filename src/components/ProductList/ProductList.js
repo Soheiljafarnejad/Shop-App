@@ -10,6 +10,7 @@ import checked from "../../utils/checked";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { filterProduct } from "../../redux/productReducer";
+import Empty from "../Empty/Empty";
 
 const ProductList = () => {
   const dispatch = useDispatch();
@@ -23,6 +24,14 @@ const ProductList = () => {
   useEffect(() => {
     dispatch(filterProduct());
   }, [dispatch]);
+  if (productList.length === 0)
+    return (
+      <Empty
+        title="نتیجه ای یافت نشد!"
+        description="ترکیب این فیلتر ها با هیچ کالایی هم خوانی ندارد."
+  
+      />
+    );
   return (
     <section className={`${style.productList}`}>
       {productList.map((item) => {

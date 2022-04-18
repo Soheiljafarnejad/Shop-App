@@ -17,7 +17,12 @@ const NextCartPage = () => {
     dispatch(changeNextCart([]));
   };
   return cart.length === 0 ? (
-    <EmptyCom />
+    <EmptyCom
+      title="لیست خرید بعدی شما خالی است!"
+      description="شما می‌توانید محصولاتی که به سبد خرید خود افزوده‌اید و فعلا قصد خرید آن‌ها را ندارید، در لیست خرید بعدی قرار داده و هر زمان مایل بودید آن‌ها را به سبد خرید اضافه کرده و خرید آن‌ها را تکمیل کنید."
+      titleLink="سبد خرید"
+      to="/cart/in"
+    />
   ) : (
     <section className={style.container}>
       <Cart

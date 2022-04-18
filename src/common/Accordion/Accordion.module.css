@@ -28,6 +28,7 @@
 
 .toggle .body {
   display: block;
+  overflow-y: auto;
 }
 .toggle .header svg {
   transform: rotate(180deg);
