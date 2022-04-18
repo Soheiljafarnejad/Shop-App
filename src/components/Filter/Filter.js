@@ -4,7 +4,12 @@ import InputRadio from "../../common/Accordion/InputRadio/InputRadio";
 import InputRange from "../../common/Accordion/InputRange/InputRange";
 import { BiLogInCircle } from "react-icons/bi";
 import style from "./Filter.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { filtered } from "../../redux/productReducer";
 const FilterCom = ({ setToggle }) => {
+  const { filterItem } = useSelector((store) => store.products);
+  const dispatch = useDispatch();
+
   const options = [
     { value: 37, label: `سایز 37` },
     { value: 38, label: `سایز 38` },
@@ -17,16 +22,22 @@ const FilterCom = ({ setToggle }) => {
   ];
 
   const initState = {
-    size: options[0].value,
+    size: "",
     price: 1500000,
   };
 
-  const [filterValue, setFilterValue] = useState(initState);
+  const [value, setValue] = useState(initState);
   const onChange = (e) => {
-    setFilterValue({ ...filterValue, [e.target.name]: e.target.value });
+    setValue({ ...value, [e.target.name]: e.target.value });
+    dispatch(filtered({ ...value, [e.target.name]: e.target.value }));
   };
-  console.log(filterValue);
 
+  const deleteFilterHandler = () => {
+    dispatch(filtered(initState));
+    setValue(initState);
+    setToggle(false);
+  };
+  console.log(filterItem);
   return (
     <section className={style.container}>
       <div className={style.header}>
@@ -34,21 +45,24 @@ const FilterCom = ({ setToggle }) => {
           className={`icons ${style.exitFilter}`}
           onClick={() => setToggle(false)}
         />
-        <h3>فیلترها</h3>
-        <p>حذف فیلترها</p>
+        <h3>
+          فیلترها
+          <span className="badge">{filterItem.length}</span>
+        </h3>
+        <p onClick={deleteFilterHandler}>حذف فیلترها</p>
       </div>
       <Accordion title="سایز">
         <InputRadio
           name="size"
           onChange={(e) => onChange(e)}
-          value={filterValue.size}
+          value={value.size}
           options={options}
         />
       </Accordion>
       <Accordion title="محدوده قیمت">
         <InputRange
           name="price"
-          value={filterValue.price}
+          value={value.price}
           onChange={onChange}
           step={100000}
           min={0}

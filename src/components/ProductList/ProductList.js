@@ -1,4 +1,3 @@
-import { products } from "../../data";
 import style from "./ProductList.module.css";
 import { FiShoppingBag } from "react-icons/fi";
 import { RiRocketLine } from "react-icons/ri";
@@ -13,13 +12,15 @@ import { Link } from "react-router-dom";
 const ProductList = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector((store) => store.cart);
+  const { productList } = useSelector((store) => store.products);
+
   const clickHandler = (e, item, value) => {
     e.preventDefault();
     dispatch(addCart(item, value));
   };
   return (
     <section className={`${style.productList}`}>
-      {products.map((item) => {
+      {productList.map((item) => {
         return (
           <Link
             to={{ pathname: `/cart/${item.id}`, search: `id=${item.id}` }}
@@ -42,7 +43,7 @@ const ProductList = () => {
                 )}
                 <p className={style.star}>
                   <span>{item.star}</span>
-                  <AiTwotoneStar className="icons"  />
+                  <AiTwotoneStar className="icons" />
                 </p>
               </div>
               <div className={style.footer}>

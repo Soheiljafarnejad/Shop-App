@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 1rem 0;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid var(--secondary-color);
 }
@@ -17,6 +16,7 @@
   align-items: center;
   justify-content: flex-start;
   width: 100%;
+  padding: 1rem 0;
   cursor: pointer;
 }
 
