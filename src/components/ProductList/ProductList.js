@@ -9,7 +9,7 @@ import numberFormat from "../../utils/numberFormat";
 import checked from "../../utils/checked";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { filtered } from "../../redux/productReducer";
+import { filterProduct } from "../../redux/productReducer";
 
 const ProductList = () => {
   const dispatch = useDispatch();
@@ -21,12 +21,7 @@ const ProductList = () => {
     dispatch(addCart(item, value));
   };
   useEffect(() => {
-    dispatch(
-      filtered({
-        size: "",
-        price: 1500000,
-      })
-    );
+    dispatch(filterProduct());
   }, [dispatch]);
   return (
     <section className={`${style.productList}`}>

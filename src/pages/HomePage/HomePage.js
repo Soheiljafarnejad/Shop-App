@@ -5,7 +5,7 @@ import { BiSliderAlt } from "react-icons/bi";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 const HomePage = () => {
-  const { filterItem } = useSelector((store) => store.products);
+  const { total } = useSelector((store) => store.products);
   const [toggle, setToggle] = useState(false);
   return (
     <section className={`container ${style.container}`}>
@@ -18,7 +18,7 @@ const HomePage = () => {
             <p>فیلترها</p>
             <div className={style.icon}>
               <BiSliderAlt className="icons" />
-              {filterItem.length > 0 && <span className={style.badge}></span>}
+              {total.length > 0 && <span className={style.badge}></span>}
             </div>
           </div>
         </section>
