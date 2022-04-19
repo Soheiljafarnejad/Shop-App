@@ -1,7 +1,12 @@
 import Accordion from "../../common/Accordion/Accordion";
 import InputRadio from "../../common/Accordion/InputRadio/InputRadio";
 import InputRange from "../../common/Accordion/InputRange/InputRange";
-import {filterDelete, filterProduct, filterValue,} from "../../redux/filterReducer";
+import {
+  filterDelete,
+  filterProduct,
+  filterValue,
+  sortProduct,
+} from "../../redux/filterReducer";
 import { IoIosArrowUp } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./Filter.module.css";
@@ -16,10 +21,12 @@ const FilterCom = ({ setToggle }) => {
     const values = { ...filterItem, [e.target.name]: e.target.value };
     dispatch(filterValue(values));
     dispatch(filterProduct(values));
+    dispatch(sortProduct());
   };
 
   const deleteFilterHandler = () => {
     dispatch(filterDelete());
+    dispatch(sortProduct());
     setToggle(false);
   };
   return (

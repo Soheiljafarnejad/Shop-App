@@ -9,7 +9,7 @@ import numberFormat from "../../utils/numberFormat";
 import checked from "../../utils/checked";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { filterProduct } from "../../redux/filterReducer";
+import { filterProduct, sortProduct } from "../../redux/filterReducer";
 import Empty from "../Empty/Empty";
 
 const ProductList = () => {
@@ -23,6 +23,7 @@ const ProductList = () => {
   };
   useEffect(() => {
     dispatch(filterProduct());
+    dispatch(sortProduct());
   }, [dispatch]);
   return (
     <section className={`${style.productList}`}>

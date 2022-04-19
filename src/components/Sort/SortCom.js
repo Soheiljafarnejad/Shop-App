@@ -1,14 +1,17 @@
 import style from "./SortCom.module.css";
 import { sortOptions } from "../../data";
-import { useState } from "react";
 import { TiTick } from "react-icons/ti";
 import { BiX } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
+import { sortProduct, sortValue } from "../../redux/filterReducer";
 
 const SortCom = ({ setToggle }) => {
-  const [value, setValue] = useState("all");
+  const { sort } = useSelector((store) => store.filter);
+  const dispatch = useDispatch();
 
   const handler = (e) => {
-    setValue(e.target.value);
+    dispatch(sortValue(e.target.value));
+    dispatch(sortProduct(e.target.value));
     setToggle(false);
   };
 
@@ -28,7 +31,7 @@ const SortCom = ({ setToggle }) => {
                 name="sorta"
                 id={item.value}
                 onChange={handler}
-                checked={item.value === value}
+                checked={item.value === sort}
               />
               <label htmlFor={item.value}>
                 <TiTick className="icons" />

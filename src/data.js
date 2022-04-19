@@ -12,7 +12,7 @@ export const products = [
   {
     name: "کفش مردانه شوپا مدل lgr3006-LightGrey",
     size: [37, 38, 41, 42, 44],
-    fast: true,
+    fast: false,
     star: 4.5,
     price: 920000,
     offPrice: 890000,
@@ -22,8 +22,8 @@ export const products = [
   {
     name: "کفش مردانه آدیداس سفید مدل FX7979",
     size: [39, 40, 41, 42, 43],
-    fast: false,
-    star: 4.8,
+    fast: true,
+    star: 4.9,
     price: 750000,
     offPrice: 730000,
     image: "https://s4.uupload.ir/files/item4_zr94.jpg",
@@ -33,7 +33,7 @@ export const products = [
     name: " کفش کوهنوردی مدل jax کد 5320 ",
     size: [37, 39, 42, 43],
     fast: false,
-    star: 4.9,
+    star: 3.9,
     price: 490000,
     offPrice: 480000,
     image: "https://s4.uupload.ir/files/item5_24ye.jpg",
@@ -43,7 +43,7 @@ export const products = [
     name: "کفش مردانه مدل کندو کد 9497",
     size: [37, 38, 40, 44],
     fast: true,
-    star: 4.8,
+    star: 4.2,
     price: 320000,
     offPrice: 300000,
     image: "https://s4.uupload.ir/files/item6_7jfy.jpg",
@@ -63,9 +63,8 @@ export const sizeOptions = [
 ];
 
 export const sortOptions = [
-  { value: "all", label: "مرتبط ترین" },
-  { value: "high", label: "بیشترین قیمت" },
   { value: "low", label: "کمترین قیمت" },
+  { value: "high", label: "بیشترین قیمت" },
   { value: "fast", label: "سریع ترین ارسال" },
-  { value: "star", label: "بیشترین خرید" },
+  { value: "star", label: "بیشترین امتیاز" },
 ];
