@@ -7,7 +7,7 @@ import { useState } from "react";
 import { useSelector } from "react-redux";
 import SortCom from "../../components/Sort/SortCom";
 const HomePage = () => {
-  const { total } = useSelector((store) => store.products);
+  const { total } = useSelector((store) => store.filter);
   const [filterToggle, setFilterToggle] = useState(false);
   const [sortToggle, setSortToggle] = useState(false);
 

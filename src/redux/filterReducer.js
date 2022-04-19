@@ -24,7 +24,7 @@ const initState = {
   total: [],
 };
 
-export const productReducer = (state = initState, action) => {
+export const filterReducer = (state = initState, action) => {
   switch (action.type) {
     case FILTER_PRODUCTS:
       return filterProductHandler(state, action);

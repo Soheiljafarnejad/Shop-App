@@ -9,13 +9,13 @@ import numberFormat from "../../utils/numberFormat";
 import checked from "../../utils/checked";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import { filterProduct } from "../../redux/productReducer";
+import { filterProduct } from "../../redux/filterReducer";
 import Empty from "../Empty/Empty";
 
 const ProductList = () => {
   const dispatch = useDispatch();
   const { cart } = useSelector((store) => store.cart);
-  const { productList } = useSelector((store) => store.products);
+  const { productList } = useSelector((store) => store.filter);
 
   const clickHandler = (e, item, value) => {
     e.preventDefault();
