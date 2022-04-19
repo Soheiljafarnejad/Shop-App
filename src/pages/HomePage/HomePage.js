@@ -6,10 +6,13 @@ import { FaSortAmountUp } from "react-icons/fa";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import SortCom from "../../components/Sort/SortCom";
+import { sortOptions } from "../../data";
 const HomePage = () => {
-  const { total } = useSelector((store) => store.filter);
+  const { total, sort } = useSelector((store) => store.filter);
   const [filterToggle, setFilterToggle] = useState(false);
   const [sortToggle, setSortToggle] = useState(false);
+
+  const {label}= sortOptions.find((item) => item.value == sort);
 
   return (
     <section className={`container ${style.container}`}>
@@ -36,6 +39,7 @@ const HomePage = () => {
           >
             <FaSortAmountUp className="icons" />
             <p>مرتب سازی :</p>
+            <span>{label}</span>
           </section>
           <section
             className={`${style.sort} ${sortToggle ? style.toggle : ""}`}

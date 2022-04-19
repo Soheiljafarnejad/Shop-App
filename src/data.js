@@ -63,8 +63,8 @@ export const sizeOptions = [
 ];
 
 export const sortOptions = [
-  { value: "low", label: "کمترین قیمت" },
-  { value: "high", label: "بیشترین قیمت" },
+  { value: "low", label: "ارزان ترین" },
+  { value: "high", label: "گران ترین" },
   { value: "fast", label: "سریع ترین ارسال" },
   { value: "star", label: "بیشترین امتیاز" },
 ];

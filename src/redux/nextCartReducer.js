@@ -75,6 +75,5 @@ const incrementHandler = (state, action) => {
 };
 
 const changeDataHandler = (state, action) => {
-  console.log(action.payload);
   return { ...state, cart: action.payload };
 };
