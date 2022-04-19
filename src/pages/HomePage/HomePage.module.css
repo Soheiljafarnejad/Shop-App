@@ -12,7 +12,7 @@
   width: 75%;
 }
 
-.slider {
+.nav {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -21,7 +21,7 @@
   padding-bottom: 1rem;
 }
 
-.slider__box {
+.nav__box {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
@@ -30,22 +30,22 @@
   height: 100%;
 }
 
-.slider__box p {
+.nav__box p {
   margin-right: 0.8rem;
 }
 
-.slider__filter {
+.nav__filter {
   display: none;
 }
 
-.slider__sort {
+.nav__sort {
   cursor: default;
 }
 
-.slider__sort p {
+.nav__sort p {
   margin-left: 1rem;
 }
-.slider__sort svg {
+.nav__sort .icon {
   transform: rotate(180deg);
   font-size: 1.8rem;
   cursor: default;
@@ -58,27 +58,17 @@
   }
   .filter {
     display: none;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    background-color: white;
   }
-  .toggle {
-    display: block;
-  }
+
   .product {
     width: 100%;
   }
-  .slider__filter {
+  .nav__filter {
     display: flex;
     margin-left: 2rem;
   }
 
-  .slider__filter .icon {
+  .nav__filter .icon {
     position: relative;
   }
   .badge {
@@ -90,10 +80,23 @@
     border-radius: 50%;
     background-color: var(--primary-color);
   }
-  .slider__sort{
+  .nav__sort {
     cursor: pointer;
   }
-  .slider__sort p span{
+
+  .nav__sort__sort {
     display: none;
+  }
+
+  .toggle {
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    background-color: white;
   }
 }

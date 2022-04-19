@@ -1,11 +1,15 @@
 import Accordion from "../../common/Accordion/Accordion";
 import InputRadio from "../../common/Accordion/InputRadio/InputRadio";
 import InputRange from "../../common/Accordion/InputRange/InputRange";
-import { filterDelete, filterProduct, filterValue,} from "../../redux/productReducer";
+import {
+  filterDelete,
+  filterProduct,
+  filterValue,
+} from "../../redux/productReducer";
 import { IoIosArrowUp } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./Filter.module.css";
-import {sizeOptions} from "../../data"
+import { sizeOptions } from "../../data";
 const FilterCom = ({ setToggle }) => {
   const { filterItem, total, productList } = useSelector(
     (store) => store.products
@@ -35,7 +39,7 @@ const FilterCom = ({ setToggle }) => {
         <InputRadio
           name="size"
           onChange={onChange}
-          value={filterItem.size}
+          value={parseInt(filterItem.size)}
           options={sizeOptions}
         />
       </Accordion>

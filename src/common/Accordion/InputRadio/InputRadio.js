@@ -12,7 +12,7 @@ const InputRadio = ({ options, name, value, onChange }) => {
               id={item.value}
               value={item.value}
               onChange={onChange}
-              checked={parseInt(item.value) === parseInt(value)}
+              checked={(item.value) === (value)}
             />
             <label htmlFor={item.value}>
               <TiTick className="icons" />
