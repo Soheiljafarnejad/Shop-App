@@ -14,16 +14,17 @@
 
 .nav {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   width: 100%;
   padding: 0 1.5rem;
   padding-bottom: 1rem;
+  font-weight: 700;
 }
 
 .nav__box {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   cursor: pointer;
   width: auto;
@@ -31,7 +32,7 @@
 }
 
 .nav__box p {
-  margin-right: 0.8rem;
+  margin-right: 0.4rem;
 }
 
 .nav__filter {
@@ -45,7 +46,7 @@
 .nav__sort p {
   margin-left: 1rem;
 }
-.nav__sort .icon {
+.nav__sort svg {
   transform: rotate(180deg);
   font-size: 1.8rem;
   cursor: default;
@@ -67,9 +68,15 @@
     display: flex;
     margin-left: 2rem;
   }
-
+  
   .nav__filter .icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
+  }
+  .icon svg {
+    font-size: 2.1rem;
   }
   .badge {
     position: absolute;
@@ -84,7 +91,7 @@
     cursor: pointer;
   }
 
-  .nav__sort__sort {
+  .sort {
     display: none;
   }
 
@@ -96,7 +103,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 999;
+    z-index: 999 !important;
     background-color: white;
   }
 }

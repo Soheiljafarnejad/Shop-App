@@ -34,17 +34,13 @@ const HomePage = () => {
             className={`${style.nav__box} ${style.nav__sort}`}
             onClick={() => setSortToggle(true)}
           >
-            <div>
-              <FaSortAmountUp className={`icons ${style.icon}`} />
-            </div>
+            <FaSortAmountUp className="icons" />
             <p>مرتب سازی :</p>
-            <section
-              className={`${style.nav__sort__sort} ${
-                sortToggle ? style.toggle : ""
-              }`}
-            >
-              <SortCom setToggle={setSortToggle} />
-            </section>
+          </section>
+          <section
+            className={`${style.sort} ${sortToggle ? style.toggle : ""}`}
+          >
+            <SortCom setToggle={setSortToggle} />
           </section>
         </nav>
         <ProductList />
