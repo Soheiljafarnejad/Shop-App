@@ -12,7 +12,7 @@ const HomePage = () => {
   const [filterToggle, setFilterToggle] = useState(false);
   const [sortToggle, setSortToggle] = useState(false);
 
-  const {label}= sortOptions.find((item) => item.value == sort);
+  const {label}= sortOptions.find((item) => item.value === sort);
 
   return (
     <section className={`container ${style.container}`}>
