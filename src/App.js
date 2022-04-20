@@ -1,6 +1,6 @@
 import "./App.css";
 import Layout from "./layout/Layout";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import HomePage from "./pages/HomePage/HomePage";
 import Login from "./pages/LoginPage/Login";
@@ -17,6 +17,7 @@ function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/cart" element={<Navigate to="/cart/in" />} />
             <Route path="/cart" element={<CartPage />}>
               <Route path="next" element={<NextCartPage />} />
               <Route path="in" element={<InCartPage />} />
@@ -24,6 +25,7 @@ function App() {
             <Route path="/:id" element={<CartDetail />} />
             <Route path="/login" element={<Login />} />
             <Route path="/sign-up" element={<Signup />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Layout>
         <Toaster />

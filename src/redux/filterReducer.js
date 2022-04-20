@@ -1,14 +1,7 @@
 import { products } from "../data";
 const FILTER_PRODUCTS = "FILTER_PRODUCTS";
-const FILTER_VALUE = "FILTER_VALUE";
 const FILTER_DELETE = "FILTER_DELETE";
-
 const SORT_PRODUCTS = "SORT_PRODUCTS";
-const SORT_VALUE = "SORT_VALUE";
-
-export const filterValue = (value) => {
-  return { type: FILTER_VALUE, payload: value };
-};
 
 export const filterDelete = () => {
   return { type: FILTER_DELETE };
@@ -20,10 +13,6 @@ export const filterProduct = (value) => {
 
 export const sortProduct = (value) => {
   return { type: SORT_PRODUCTS, payload: value };
-};
-
-export const sortValue = (value) => {
-  return { type: SORT_VALUE, payload: value };
 };
 
 const initState = {
@@ -40,12 +29,8 @@ export const filterReducer = (state = initState, action) => {
   switch (action.type) {
     case FILTER_PRODUCTS:
       return filterProductHandler(state, action);
-    case FILTER_VALUE:
-      return { ...state, filterItem: action.payload };
     case SORT_PRODUCTS:
       return sortProductHandler(state, action);
-    case SORT_VALUE:
-      return { ...state, sort: action.payload };
     case FILTER_DELETE:
       return { ...initState, sort: state.sort };
     default:
@@ -65,7 +50,12 @@ const filterProductHandler = (state, action) => {
     }
     return item.size.find((s) => parseInt(s) === parseInt(action.payload.size));
   });
-  return { ...state, productList: filteredSize, total };
+  return {
+    ...state,
+    productList: filteredSize,
+    total,
+    filterItem: action.payload,
+  };
 };
 
 const totalHandler = (action) => {
@@ -80,15 +70,12 @@ const totalHandler = (action) => {
 const sortProductHandler = (state, action) => {
   if (!action.payload) action.payload = state.sort;
   switch (action.payload) {
-    case "all": {
-      return state;
-    }
     case "high": {
       const clone = [...state.productList];
       const sorted = clone.sort((a, b) => {
         return b.offPrice - a.offPrice;
       });
-      return { ...state, productList: sorted };
+      return { ...state, productList: sorted, sort: action.payload };
     }
 
     case "low": {
@@ -96,7 +83,7 @@ const sortProductHandler = (state, action) => {
       const sorted = clone.sort((a, b) => {
         return a.offPrice - b.offPrice;
       });
-      return { ...state, productList: sorted };
+      return { ...state, productList: sorted, sort: action.payload };
     }
 
     case "star": {
@@ -104,7 +91,7 @@ const sortProductHandler = (state, action) => {
       const sorted = clone.sort((a, b) => {
         return b.star - a.star;
       });
-      return { ...state, productList: sorted };
+      return { ...state, productList: sorted, sort: action.payload };
     }
 
     case "fast": {
@@ -112,10 +99,10 @@ const sortProductHandler = (state, action) => {
       const sorted = clone.sort((a, b) => {
         return b.fast - a.fast;
       });
-      return { ...state, productList: sorted };
+      return { ...state, productList: sorted, sort: action.payload };
     }
 
     default:
-      return state;
+      return { ...state, sort: action.payload };
   }
 };

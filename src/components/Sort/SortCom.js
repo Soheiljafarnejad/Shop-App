@@ -3,14 +3,13 @@ import { sortOptions } from "../../data";
 import { TiTick } from "react-icons/ti";
 import { BiX } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
-import { sortProduct, sortValue } from "../../redux/filterReducer";
+import { sortProduct } from "../../redux/filterReducer";
 
 const SortCom = ({ setToggle }) => {
   const { sort } = useSelector((store) => store.filter);
   const dispatch = useDispatch();
 
   const handler = (e) => {
-    dispatch(sortValue(e.target.value));
     dispatch(sortProduct(e.target.value));
     setToggle(false);
   };

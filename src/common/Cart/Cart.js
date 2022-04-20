@@ -8,7 +8,7 @@ import { VscSymbolRuler } from "react-icons/vsc";
 import { BiStoreAlt } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 import numberFormat from "../../utils/numberFormat";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const Cart = ({
   cart,
   changeCart,
@@ -19,6 +19,7 @@ const Cart = ({
   titleLink,
 }) => {
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const handler = () => {
     dispatch(changeCart(cart));
@@ -41,7 +42,10 @@ const Cart = ({
           <section key={item.id} className={style.cart}>
             <div className={style.cartRight}>
               <Link
-                to={{ pathname: `/cart/${item.id}`, search: `id=${item.id}` }}
+                to={{
+                  pathname: `/${item.id}`,
+                  search: `id=${item.id}&&back=${location.pathname}`,
+                }}
               >
                 <img src={item.image} alt={item.name} />
               </Link>

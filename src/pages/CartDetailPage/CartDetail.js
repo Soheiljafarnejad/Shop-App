@@ -32,7 +32,10 @@ const CartDetail = () => {
       <section className={style.cartList}>
         <div className={style.header}>
           <h2>{state.name}</h2>
-          <Link to="/" className={style.link}>
+          <Link
+            to={parsed.back ? parsed.back : "/"}
+            className={style.link}
+          >
             برگشت
           </Link>
         </div>
@@ -101,7 +104,7 @@ const CartDetail = () => {
             </li>
           )}
           <li className={style.discount}>
-            <p> {numberFormat(state.price-state.offPrice)} تومان تخفیف </p>
+            <p> {numberFormat(state.price - state.offPrice)} تومان تخفیف </p>
           </li>
         </ul>
         <div className={style.cartSummaryFooter}>

@@ -4,7 +4,6 @@ import InputRange from "../../common/Accordion/InputRange/InputRange";
 import {
   filterDelete,
   filterProduct,
-  filterValue,
   sortProduct,
 } from "../../redux/filterReducer";
 import { IoIosArrowUp } from "react-icons/io";
@@ -19,7 +18,6 @@ const FilterCom = ({ setToggle }) => {
 
   const onChange = (e) => {
     const values = { ...filterItem, [e.target.name]: e.target.value };
-    dispatch(filterValue(values));
     dispatch(filterProduct(values));
     dispatch(sortProduct());
   };
