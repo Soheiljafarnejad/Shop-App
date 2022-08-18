@@ -35,6 +35,10 @@
   margin-bottom: 1rem;
 }
 
+.cartSummary span{
+  font-weight: bold;
+}
+
 .cartSummary div p {
   text-align: end;
 }

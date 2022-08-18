@@ -1,3 +1,8 @@
+import Image_1 from "./assets/img/1.jpg"
+import Image_2 from "./assets/img/2.jpg"
+import Image_3 from "./assets/img/3.jpg"
+import Image_4 from "./assets/img/4.jpg"
+import Image_5 from "./assets/img/5.png"
 export const products = [
   {
     name: "کفش مردانه سالومون راک مدل 411685",
@@ -6,7 +11,7 @@ export const products = [
     star: 4.7,
     price: 580000,
     offPrice: 550000,
-    image: "https://s4.uupload.ir/files/item2_fc5s.jpg",
+    image: Image_1,
     id: 1,
   },
   {
@@ -16,7 +21,7 @@ export const products = [
     star: 4.5,
     price: 920000,
     offPrice: 890000,
-    image: "https://s4.uupload.ir/files/item3_zvc9.jpg",
+    image: Image_2,
     id: 2,
   },
   {
@@ -26,7 +31,7 @@ export const products = [
     star: 4.9,
     price: 750000,
     offPrice: 730000,
-    image: "https://s4.uupload.ir/files/item4_zr94.jpg",
+    image: Image_5,
     id: 3,
   },
   {
@@ -36,7 +41,7 @@ export const products = [
     star: 3.9,
     price: 490000,
     offPrice: 480000,
-    image: "https://s4.uupload.ir/files/item5_24ye.jpg",
+    image: Image_3,
     id: 4,
   },
   {
@@ -46,7 +51,7 @@ export const products = [
     star: 4.2,
     price: 320000,
     offPrice: 300000,
-    image: "https://s4.uupload.ir/files/item6_7jfy.jpg",
+    image: Image_4,
     id: 5,
   },
 ];
