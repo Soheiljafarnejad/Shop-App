@@ -41,6 +41,7 @@
 
 .cartSummary div p {
   text-align: end;
+  font-weight: bold;
 }
 
 .cartSummaryTotal {

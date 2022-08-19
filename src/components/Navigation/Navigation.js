@@ -13,50 +13,48 @@ const Navigation = () => {
   }, [cart, dispatch]);
 
   return (
-    <section className={style.navigation}>
-      <div className={style.title}>
-        <NavLink
-          to="/"
-          className={(e) =>
-            `${style.loginBox} ${e.isActive ? `${style.activeLink}` : ""}`
-          }
-        >
-          <h1>فروشگاه</h1>
-        </NavLink>
-      </div>
-      <nav className={style.nav}>
-        <ul>
-          <li>
-            <NavLink to="/cart/in">
-              <div className={style.cart}>
-                <BsCart2 className="icons" />
-                <span className={`badge ${style.badge}`}>{totalQuantity}</span>
-              </div>
-            </NavLink>
-          </li>
-          <li>
-            <div className={style.profile}>
-              <NavLink
-                className={(e) =>
-                  `${style.loginBox} ${e.isActive ? `${style.activeLink}` : ""}`
-                }
-                to="/login"
-              >
-                <div className={style.login}>
-                  <HiOutlineLogin className="icons" />
-                  <span>ورود</span>
+    <section className={` ${style.navContainer}`}>
+      <div className={`container ${style.navigation}`}>
+        <div className={style.title}>
+          <NavLink
+            to="/"
+            className={(e) => `${style.loginBox} ${e.isActive ? `${style.activeLink}` : ""}`}
+          >
+            <h1>فروشگاه</h1>
+          </NavLink>
+        </div>
+        <nav className={style.nav}>
+          <ul>
+            <li>
+              <NavLink to="/cart/in">
+                <div className={style.cart}>
+                  <BsCart2 className="icons" />
+                  <span className={`badge ${style.badge}`}>{totalQuantity}</span>
                 </div>
               </NavLink>
-              <NavLink
-                className={(e) => `${e.isActive ? `${style.activeLink}` : ""}`}
-                to="/sign-up"
-              >
-                <span>ثبت نام</span>
-              </NavLink>
-            </div>
-          </li>
-        </ul>
-      </nav>
+            </li>
+            <li>
+              <div className={style.profile}>
+                <NavLink
+                  className={(e) => `${style.loginBox} ${e.isActive ? `${style.activeLink}` : ""}`}
+                  to="/login"
+                >
+                  <div className={style.login}>
+                    <HiOutlineLogin className="icons" />
+                    <span>ورود</span>
+                  </div>
+                </NavLink>
+                <NavLink
+                  className={(e) => `${e.isActive ? `${style.activeLink}` : ""}`}
+                  to="/sign-up"
+                >
+                  <span>ثبت نام</span>
+                </NavLink>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </section>
   );
 };
